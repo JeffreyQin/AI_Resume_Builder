@@ -6,11 +6,11 @@
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. Social profile (Email, LinkedIn, GitHub)\n        \n3. Education background (Highschool name, graduation year, diploma obtained)\n    "
+            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. Age\n        \n3. Highschool name.\n        \nWhen all information is obtained, respond with'qqwqwqwqw'.\n    "
         },
         {
             "role": "assistant",
-            "content": "Great! Let's start building your impressive resume for your college application.\n\n1. Name: Could you please provide me with your full name?\n\n2. Social Profile: It's important to include your online presence. Do you have an email, LinkedIn, and GitHub account? If yes, please provide those details.\n\n3. Education Background: Tell me about your high school experience. What's the name of your high school, the year you graduated, and the diploma you obtained?\n\nRemember, the more information you provide, the better your resume will be!"
+            "content": "Let's begin building your college application resume! First, could you please tell me your full name?"
         }
     ]
 }

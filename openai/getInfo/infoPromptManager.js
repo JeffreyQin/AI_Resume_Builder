@@ -1,9 +1,9 @@
 const { modifyJsonFile } = require('modify-json-file');
 const path = require('path');
-const chat = require('./chat.json');
+const statusManager = require('../../statusManager.json');
 
 exports.getPrompt = async (newPrompt) => {
-    const prompt = chat.prompt;
+    const prompt = require('./chat.json').prompt;
     prompt.push({ "role": "user", "content": newPrompt });
     return prompt;
 }
@@ -14,6 +14,18 @@ exports.updatePrompt = async (newPrompt, newCompletion) => {
         path.join(__dirname, 'chat.json'),
         {
             prompt: newPrompt
+        }
+    )
+}
+
+exports.backPrompt = async () => {
+    const modifiedPrompt = require('./chat.json').prompt;
+    modifiedPrompt.pop();
+    modifiedPrompt.pop();
+    await modifyJsonFile(
+        path.join(__dirname, 'chat.json'),
+        { 
+            prompt: modifiedPrompt
         }
     )
 }
@@ -42,14 +54,14 @@ function getDefaultPrompt(option) {
 }
 
 
-
 exports.collegeDefaultPrompt = `
         Instruction:
         \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.
         \nInformation needed:
         \n1. Name
-        \n2. Social profile (Email, LinkedIn, GitHub)
-        \n3. Education background (Highschool name, graduation year, diploma obtained)
+        \n2. Age
+        \n3. Highschool name.
+        \nWhen all information is obtained, respond with'${statusManager.COLLEGE_RESUME_INFO_READY}'.
     `
 
 exports.jobDefaultPrompt = ``
