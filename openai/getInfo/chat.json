@@ -6,11 +6,35 @@
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. Age\n        \n3. Highschool name.\n        \nWhen all information is obtained, respond with'qqwqwqwqw'.\n    "
+            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. Age\n        \n3. Highschool name.\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
         },
         {
             "role": "assistant",
-            "content": "Let's begin building your college application resume! First, could you please tell me your full name?"
+            "content": "To kickstart your college application process, we're going to first create a resume. Let's start simple - could you please tell me your full name?"
+        },
+        {
+            "role": "user",
+            "content": "tom li"
+        },
+        {
+            "role": "assistant",
+            "content": "Nice to meet you, Tom Li! Now, could you please share your age with me?"
+        },
+        {
+            "role": "user",
+            "content": "12"
+        },
+        {
+            "role": "assistant",
+            "content": "Thanks for sharing, Tom. Lastly, could you please tell me the name of your high school for the final section of your resume?"
+        },
+        {
+            "role": "user",
+            "content": "ss hs"
+        },
+        {
+            "role": "assistant",
+            "content": "Thanks for the information, Tom Li! We'll add SS HS as your high school to your resume. \n\nNow, could you please upload your transcript? This will be incredibly helpful as we continue to build out your resume."
         }
     ]
 }

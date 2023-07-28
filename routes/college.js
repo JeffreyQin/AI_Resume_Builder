@@ -10,7 +10,7 @@ const infoGPTGenerate = require('../openai/getInfo/infoGPTGenerate');
 const resumePromptManager = require('../openai/createResume/resumePromptManager');
 const resumeGPTGenerate = require('../openai/createResume/resumeGPTGenerate')
 
-const statusManager = require('../statusManager.json');
+const msgManager = require('../msgManager.json');
 
 router.use('/init', async (req, res) => {
     await infoPromptManager.resetPrompt(0);
@@ -20,7 +20,7 @@ router.use('/init', async (req, res) => {
 
 router.post('/getinfo/forward', async (req, res) => {
     const response = await infoGPTGenerate.generate(req.body.input);
-    if (response.includes(statusManager.COLLEGE_RESUME_INFO_READY)) {
+    if (response.toLowerCase().includes('transcript')) {
         res.json({ status: 0, message: response });
     } else {
         res.json({ status: 1, message: response });
@@ -33,9 +33,11 @@ router.use('/getinfo/backward', async (req, res) => {
 });
 
 
-router.get('/createresume', async (req, res) => {
-    const infoChat = require('../openai/getInfo/chat')
-    const resumeJson = await resumeGPTGenerate.organize(infoChat.prompt)
+router.post('/createresume', async (req, res) => {
+    console.log(req.body);
+    res.end();
+    //const infoChat = require('../openai/getInfo/chat');
+    //const resumeJson = await resumeGPTGenerate.organize(infoChat.prompt)
 });
 
 module.exports = router;

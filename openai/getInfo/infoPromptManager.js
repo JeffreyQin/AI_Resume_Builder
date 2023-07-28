@@ -1,6 +1,6 @@
 const { modifyJsonFile } = require('modify-json-file');
 const path = require('path');
-const statusManager = require('../../statusManager.json');
+const msgManager = require('../../msgManager.json');
 
 exports.getPrompt = async (newPrompt) => {
     const prompt = require('./chat.json').prompt;
@@ -61,7 +61,7 @@ exports.collegeDefaultPrompt = `
         \n1. Name
         \n2. Age
         \n3. Highschool name.
-        \nWhen all information is obtained, respond with'${statusManager.COLLEGE_RESUME_INFO_READY}'.
+        \nWhen all information is obtained, respond with'${msgManager.COLLEGE_RESUME_INFO_READY}'.
     `
 
 exports.jobDefaultPrompt = ``

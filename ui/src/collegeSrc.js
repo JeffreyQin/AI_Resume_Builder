@@ -1,29 +1,33 @@
-const respondButton = document.getElementById('respondButton');
-const respondField = document.getElementById('respondField');
 const chatPanel = document.getElementById('chatPanel');
-const returnButton = document.getElementById('returnButton');
-const exitButton = document.getElementById('exitButton');
-const textArr = [];
+const uploadPanel = document.getElementById('uploadPanel');
+const fileUpload = document.getElementById('fileUpload');
+const readyButton = document.getElementById('readyButton');
+const textArray = [];
+
+const respondField = document.createElement('input');
+const respondButton = document.createElement('button');
+respondButton.innerHTML = 'Provide info';
+const returnButton = document.createElement('button');
+returnButton.innerHTML = 'Go back';
+const exitButton = document.createElement('button');
+exitButton.innerHTML = 'Quit';
+
 
 document.addEventListener('DOMContentLoaded', async () => {
-    respondField.value = 'Please hold';
-    respondField.setAttribute('disabled', true);
-    respondButton.setAttribute('disabled', true);
-    returnButton.setAttribute('disabled', true);
-    exitButton.setAttribute('disabled', true);
-
+    uploadPanel.removeChild(fileUpload);
+    uploadPanel.removeChild(readyButton);
     const result = await fetch('http://localhost:3000/college/init')
         .then(res => res.json())
         .then(res => res.message);
-    
-    botPanelUpdate(result);
-})
+
+    initPanelUpdate(result);
+});
 
 respondButton.addEventListener('click', async () => {
     input = respondField.value;
     userPanelUpdate(input);
 
-    const result = await fetch(`http://localhost:3000/college/getinfo/forward`, {
+    const result = await fetch('http://localhost:3000/college/getinfo/forward', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
@@ -32,7 +36,7 @@ respondButton.addEventListener('click', async () => {
             input: input
         })
     })
-    .then(res => res.json())
+    .then(res => res.json());
 
     if (result.status == 1) {
         botPanelUpdate(result.message);
@@ -42,35 +46,50 @@ respondButton.addEventListener('click', async () => {
 });
 
 returnButton.addEventListener('click', async () => {
-    chatPanel.removeChild(textArr[0]);
-    chatPanel.removeChild(textArr[1]);
-    textArr.shift();
-    textArr.shift();
-    if (textArr.length == 1) {
+    chatPanel.removeChild(textArray[0]);
+    chatPanel.removeChild(textArray[1]);
+    textArray.shift();
+    textArray.shift();
+    if (textArray.length == 1) {
         returnButton.setAttribute('disabled', true);
     }
-    await fetch('http://localhost:3000/college/getinfo/backward');
+    await fetch('http://localhost:3000/college/getinfo/backward')
 });
 
-exitButton.addEventListener('click', async () => {
-    window.location.href = 'index.html';
+readyButton.addEventListener('click', async () => {
+    const file = fileUpload.files[0];
+    const formData = new FormData();
+    formData.append('title', 'transcript');
+    formData.append('file', file);
+    await fetch('http://localhost:3000/college/createresume', {
+        method: "POST",
+        body: formData,
+    });
 });
 
-function botPanelUpdate(message) {
-    chatPanel.removeChild(respondField);
-    chatPanel.removeChild(respondButton);
-    chatPanel.removeChild(returnButton);
-    chatPanel.removeChild(exitButton);
+
+function initPanelUpdate(message) {
     const botText = document.createElement('p');
     botText.innerHTML = `<b>AI: </b>${message}`;
-    textArr.unshift(botText);
+    textArray.unshift(botText);
+    returnButton.setAttribute('disabled', true);
+    chatPanel.appendChild(botText);
+    chatPanel.appendChild(respondField);
+    chatPanel.appendChild(respondButton);
+    chatPanel.appendChild(returnButton);
+    chatPanel.appendChild(exitButton);
+}
+
+function botPanelUpdate(message) {
+    const botText = document.createElement('p');
+    botText.innerHTML = `<b>AI: </b>${message}`;
+    textArray.unshift(botText);
     respondField.value = '';
-    respondField.removeAttribute('disabled');
-    respondButton.removeAttribute('disabled');
-    if (textArr.length > 1) {
+    if (textArray.length > 1) {
         returnButton.removeAttribute('disabled');
+    } else {
+        returnButton.setAttribute('disabled', true);
     }
-    exitButton.removeAttribute('disabled');
     chatPanel.appendChild(botText);
     chatPanel.appendChild(respondField);
     chatPanel.appendChild(respondButton);
@@ -85,34 +104,14 @@ function userPanelUpdate(message) {
     chatPanel.removeChild(exitButton);
     const userText = document.createElement('p');
     userText.innerHTML = `<b>You: </b>${message}`;
-    textArr.unshift(userText);
-    respondField.value = 'Please hold';
-    respondField.setAttribute('disabled', true);
-    respondButton.setAttribute('disabled', true);
-    returnButton.setAttribute('disabled', true);
+    textArray.unshift(userText);
     chatPanel.appendChild(userText);
-    exitButton.setAttribute('disabled', true);
-    chatPanel.appendChild(respondField);
-    chatPanel.appendChild(respondButton);
-    chatPanel.appendChild(returnButton);
-    chatPanel.appendChild(exitButton);
 }
 
 function readyPanelUpdate(message) {
-    chatPanel.removeChild(respondField);
-    chatPanel.removeChild(respondButton);
-    chatPanel.removeChild(returnButton);
-    chatPanel.removeChild(exitButton);
     const botText = document.createElement('p');
     botText.innerHTML = `<b>AI: </b>${message}`;
-    const readyButton = document.createElement('button');
-    readyButton.innerHTML = 'Create my resume!';
-    returnButton.removeAttribute('disabled');
-    exitButton.removeAttribute('disabled');
     chatPanel.appendChild(botText);
-    chatPanel.appendChild(readyButton);
-
-    readyButton.addEventListener('click', async () => {
-        await fetch('http://localhost:3000/college/createresume');
-    })
+    uploadPanel.appendChild(fileUpload);
+    uploadPanel.appendChild(readyButton);
 }
