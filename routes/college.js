@@ -2,11 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const router = express.Router();
-const upload = multer({ dest: 'uploads/'});
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+    },
+    filename: function(req, file, cb) {
+        cb(null, 'transcript.jpeg');
+    }
+});
+const upload = multer({ storage: storage });
 
 const infoPromptManager = require('../openai/getInfo/infoPromptManager');
 const infoGPTGenerate = require('../openai/getInfo/infoGPTGenerate');
