@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 const router = express.Router();
+const upload = multer({ dest: 'uploads/'});
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
+
 
 const infoPromptManager = require('../openai/getInfo/infoPromptManager');
 const infoGPTGenerate = require('../openai/getInfo/infoGPTGenerate');
 const resumePromptManager = require('../openai/createResume/resumePromptManager');
 const resumeGPTGenerate = require('../openai/createResume/resumeGPTGenerate')
-
 const msgManager = require('../msgManager.json');
 
 router.use('/init', async (req, res) => {
@@ -33,8 +35,8 @@ router.use('/getinfo/backward', async (req, res) => {
 });
 
 
-router.post('/createresume', async (req, res) => {
-    console.log(req.body);
+router.post('/createresume', upload.single('transcript'), async (req, res) => {
+    console.log('success')
     res.end();
     //const infoChat = require('../openai/getInfo/chat');
     //const resumeJson = await resumeGPTGenerate.organize(infoChat.prompt)

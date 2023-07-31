@@ -10,31 +10,31 @@
         },
         {
             "role": "assistant",
-            "content": "To kickstart your college application process, we're going to first create a resume. Let's start simple - could you please tell me your full name?"
+            "content": "Great, let's create an outstanding resume for your college application together! Could you please tell me your name first?"
         },
         {
             "role": "user",
-            "content": "tom li"
+            "content": "jeffrey"
         },
         {
             "role": "assistant",
-            "content": "Nice to meet you, Tom Li! Now, could you please share your age with me?"
+            "content": "Nice to meet you, Jeffrey! Now, could you please tell me your age?"
         },
         {
             "role": "user",
-            "content": "12"
+            "content": "15"
         },
         {
             "role": "assistant",
-            "content": "Thanks for sharing, Tom. Lastly, could you please tell me the name of your high school for the final section of your resume?"
+            "content": "Great Jeffrey! Now, could you please share with me the name of your high school?"
         },
         {
             "role": "user",
-            "content": "ss hs"
+            "content": "tom high school"
         },
         {
             "role": "assistant",
-            "content": "Thanks for the information, Tom Li! We'll add SS HS as your high school to your resume. \n\nNow, could you please upload your transcript? This will be incredibly helpful as we continue to build out your resume."
+            "content": "Awesome, Jeffrey! So you're 15 and you're attending Tom High School. That's all the information I need for now. Please, could you upload your transcript next?"
         }
     ]
 }
