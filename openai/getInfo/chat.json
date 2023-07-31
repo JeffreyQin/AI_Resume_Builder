@@ -6,35 +6,19 @@
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. Age\n        \n3. Highschool name.\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
+            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
         },
         {
             "role": "assistant",
-            "content": "Great! Let's kickstart your college application journey! First of all, could you kindly tell me your name?"
+            "content": "Let's start building your impressive resume for your college application! Could you please provide me with your name?"
         },
         {
             "role": "user",
-            "content": "tom"
+            "content": "jeff"
         },
         {
             "role": "assistant",
-            "content": "Nice to meet you, Tom! Now, could you please share your age?"
-        },
-        {
-            "role": "user",
-            "content": "16"
-        },
-        {
-            "role": "assistant",
-            "content": "Thanks for that information, Tom! Now can you tell me the name of your high school?"
-        },
-        {
-            "role": "user",
-            "content": "tommy high school"
-        },
-        {
-            "role": "assistant",
-            "content": "Thank you, Tom. Now that we have your name, age, and high school, we're ready to get your resume started! Please upload your transcript."
+            "content": "Thanks, Jeff! Let's move on to the next step. Would you please upload your transcript?"
         }
     ]
 }

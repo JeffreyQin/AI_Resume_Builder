@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const router = express.Router();
+const { spawn } = require('child_process');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +45,13 @@ router.use('/getinfo/backward', async (req, res) => {
 
 
 router.post('/createresume', upload.single('transcript'), async (req, res) => {
-    console.log('success')
+    var pyData;
+    const pythonProcess = await spawn('python3', ['./test.py']);
+    console.log('liol')
+    pythonProcess.stdout.on('data', function (data) {
+        console.log('dead');
+        console.log(data.toString());
+    })
     res.end();
     //const infoChat = require('../openai/getInfo/chat');
     //const resumeJson = await resumeGPTGenerate.organize(infoChat.prompt)
