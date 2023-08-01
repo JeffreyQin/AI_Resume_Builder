@@ -10,15 +10,15 @@
         },
         {
             "role": "assistant",
-            "content": "Let's start building your impressive resume for your college application! Could you please provide me with your name?"
+            "content": "Alright, let's start this exciting journey! May I please know your full name?"
         },
         {
             "role": "user",
-            "content": "jeff"
+            "content": "jeffrey qin"
         },
         {
             "role": "assistant",
-            "content": "Thanks, Jeff! Let's move on to the next step. Would you please upload your transcript?"
+            "content": "Great, Jeffrey Qin! Now that we have all the information needed, could you please upload your transcripts?"
         }
     ]
 }
