@@ -59,6 +59,8 @@ exports.collegeDefaultPrompt = `
         \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.
         \nInformation needed:
         \n1. Name
+        \n2. age
+        \n3. high school
         \nWhen all information is obtained, respond with'${msgManager.COLLEGE_RESUME_INFO_READY}'.
     `
 

@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/')
+        cb(null, 'opencv/')
     },
     filename: function(req, file, cb) {
         cb(null, 'transcript.jpeg');
@@ -19,8 +19,7 @@ const upload = multer({ storage: storage });
 
 const infoPromptManager = require('../openai/getInfo/infoPromptManager');
 const infoGPTGenerate = require('../openai/getInfo/infoGPTGenerate');
-const resumePromptManager = require('../openai/createResume/resumePromptManager');
-const resumeGPTGenerate = require('../openai/createResume/resumeGPTGenerate')
+const sumGPTGenerate = require('../openai/summarize/sumGPTGenerate');
 const msgManager = require('../msgManager.json');
 
 router.use('/init', async (req, res) => {
@@ -44,14 +43,13 @@ router.use('/getinfo/backward', async (req, res) => {
 });
 
 
-router.post('/createresume', upload.single('transcript'), async (req, res) => {
-    PythonShell.run('test.py', null).then((message) => {
-        console.log('facts');
-    })
-    
-    res.end();
-    //const infoChat = require('../openai/getInfo/chat');
-    //const resumeJson = await resumeGPTGenerate.organize(infoChat.prompt)
+router.post('/summarize', upload.single('transcript'), async (req, res) => {
+    const transcriptText = await PythonShell.run('./opencv/preprocessing.py', null);
+    const infoChat = require('../openai/getInfo/chat.json').prompt;
+    const chatSummary = await sumGPTGenerate.summarize(infoChat, 0);
+    const uploadSummary = await sumGPTGenerate.summarize(transcriptText, 1);
+    console.log(chatSummary);
+    console.log(uploadSummary);
 });
 
 module.exports = router;

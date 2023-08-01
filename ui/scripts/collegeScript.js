@@ -63,7 +63,7 @@ readyButton.addEventListener('click', async () => {
     } else {
         const formData = new FormData();
         formData.append('transcript', file);
-        await fetch('http://localhost:3000/college/createresume', {
+        await fetch('http://localhost:3000/college/summarize', {
             method: "POST",
             body: formData,
         });

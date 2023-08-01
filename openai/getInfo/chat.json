@@ -6,19 +6,35 @@
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
+            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. age\n        \n3. high school\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
         },
         {
             "role": "assistant",
-            "content": "Alright, let's start this exciting journey! May I please know your full name?"
+            "content": "Sure, I would absolutely love to help you build a compelling resume for your college application! First up, could you please let me know your name?"
         },
         {
             "role": "user",
-            "content": "jeffrey qin"
+            "content": "tommy li"
         },
         {
             "role": "assistant",
-            "content": "Great, Jeffrey Qin! Now that we have all the information needed, could you please upload your transcripts?"
+            "content": "Great! Nice to meet you, Tommy Li. Now, could you enlighten me with your age?"
+        },
+        {
+            "role": "user",
+            "content": "18"
+        },
+        {
+            "role": "assistant",
+            "content": "Fantastic, Tommy Li. As an 18-year-old, you're at the perfect age for starting college. The final piece of basic information I need is the name of your high school. Could you share that, please?"
+        },
+        {
+            "role": "user",
+            "content": "li school"
+        },
+        {
+            "role": "assistant",
+            "content": "Awesome! You're from Li School, that's great. So, we have all the basic information. Now, please upload your transcript."
         }
     ]
 }
