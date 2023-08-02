@@ -1,3 +1,4 @@
+
 const chatPanel = document.getElementById('chatPanel');
 const uploadPanel = document.getElementById('uploadPanel');
 const fileUpload = document.getElementById('fileUpload');
@@ -61,6 +62,8 @@ readyButton.addEventListener('click', async () => {
     if (!file) {
         alert('Please upload a valid transcript.');
     } else {
+        fileUpload.setAttribute('disabled', true);
+        readyButton.setAttribute('disabled', true);
         const formData = new FormData();
         formData.append('transcript', file);
         await fetch('http://localhost:3000/college/summarize', {
@@ -68,6 +71,7 @@ readyButton.addEventListener('click', async () => {
             body: formData,
         });
     }
+    window.location.href = 'collegeFini.html';
 });
 
 

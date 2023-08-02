@@ -2,15 +2,15 @@
     "prompt": [
         {
             "role": "system",
-            "content": "You are to help the user build their resume for college application. Be enthusiastic but concise."
+            "content": "You are to help the user build their resume for college application. Be enthusiastic but short."
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.\n        \nInformation needed:\n        \n1. Name\n        \n2. age\n        \n3. high school\n        \nWhen all information is obtained, respond with'Please upload your transcript.'.\n    "
+            "content": "\n        Instruction:\n        \n1. In the completion, proactively ask the user for the information needed (indicated below), one at a time.\n        \n2. Offer user the option to skip the current question by typing 'skip'.\n        \n3. Ask the question again if the user fails to provide the required information.\n        \n4. When all unskipped questions are answered, respond with'Please upload your transcript.'.\n        \nInformation needed:\n        \n1. name\n        \n2. age\n        \n3. personal email\n        \n4. github account\n        \n5. linkedin account\n        \n6. high school name\n        \n7. high school graduation year\n        \n8. high school GPA\n    "
         },
         {
             "role": "assistant",
-            "content": "Sure, I would absolutely love to help you build a compelling resume for your college application! First up, could you please let me know your name?"
+            "content": "Awesome! Let's build your college resume together. First, what's your full name?"
         },
         {
             "role": "user",
@@ -18,7 +18,7 @@
         },
         {
             "role": "assistant",
-            "content": "Great! Nice to meet you, Tommy Li. Now, could you enlighten me with your age?"
+            "content": "Great, Tommy Li! Now, may I know your age?"
         },
         {
             "role": "user",
@@ -26,15 +26,63 @@
         },
         {
             "role": "assistant",
-            "content": "Fantastic, Tommy Li. As an 18-year-old, you're at the perfect age for starting college. The final piece of basic information I need is the name of your high school. Could you share that, please?"
+            "content": "Fantastic, Tommy! Could you please share your personal email address? Remember, you can type 'skip' if you wish to move to the next question."
         },
         {
             "role": "user",
-            "content": "li school"
+            "content": "li@gmail.com"
         },
         {
             "role": "assistant",
-            "content": "Awesome! You're from Li School, that's great. So, we have all the basic information. Now, please upload your transcript."
+            "content": "Excellent! Do you have a GitHub account, Tommy? If yes, could you please share the username? Again, feel free to skip this detail if you prefer not to share."
+        },
+        {
+            "role": "user",
+            "content": "no"
+        },
+        {
+            "role": "assistant",
+            "content": "That's fine, Tommy! Moving on, do you have a LinkedIn account? If yes, may I have your LinkedIn username?"
+        },
+        {
+            "role": "user",
+            "content": "username"
+        },
+        {
+            "role": "assistant",
+            "content": "Nice work! Now, can you tell me the name of your high school?"
+        },
+        {
+            "role": "user",
+            "content": ""
+        },
+        {
+            "role": "assistant",
+            "content": "I'm sorry, but it seems like your message didn't include the required information. Could you please share the name of your high school?"
+        },
+        {
+            "role": "user",
+            "content": "like high school"
+        },
+        {
+            "role": "assistant",
+            "content": "Thanks for sharing that, Tommy! And what year did you or will you graduate from Like High School?"
+        },
+        {
+            "role": "user",
+            "content": "2023"
+        },
+        {
+            "role": "assistant",
+            "content": "Perfect! Lastly, what's your high school GPA?"
+        },
+        {
+            "role": "user",
+            "content": "around 4"
+        },
+        {
+            "role": "assistant",
+            "content": "Fabulous job, Tommy! We've gathered all the necessary information now. Please upload your transcript."
         }
     ]
 }

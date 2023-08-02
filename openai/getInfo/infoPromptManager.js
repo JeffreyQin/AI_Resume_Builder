@@ -43,25 +43,31 @@ function getDefaultPrompt(option) {
     if (option == 0) {
         return [{
             "role": "system",
-            "content": "You are to help the user build their resume for college application. Be enthusiastic but concise."
+            "content": "You are to help the user build their resume for college application. Be enthusiastic but short."
         }];
     } else {
         return [{
             "role": "system",
-            "content": "You are to help the user build their resume for job application. Be enthusiastic but concise."
+            "content": "You are to help the user build their resume for job application. Be enthusiastic but short."
         }]
     }
 }
 
-
 exports.collegeDefaultPrompt = `
         Instruction:
-        \nIn the completion, proactively ask the user for the information needed (indicated below), one at a time. Ask again if the user fails to provide the required information in their next prompt.
+        \n1. In the completion, proactively ask the user for the information needed (indicated below), one at a time.
+        \n2. Offer user the option to skip the current question by typing 'skip'.
+        \n3. Ask the question again if the user fails to provide the required information.
+        \n4. When all unskipped questions are answered, respond with'${msgManager.COLLEGE_RESUME_INFO_READY}'.
         \nInformation needed:
-        \n1. Name
+        \n1. name
         \n2. age
-        \n3. high school
-        \nWhen all information is obtained, respond with'${msgManager.COLLEGE_RESUME_INFO_READY}'.
+        \n3. personal email
+        \n4. github account
+        \n5. linkedin account
+        \n6. high school name
+        \n7. high school graduation year
+        \n8. high school GPA
     `
 
 exports.jobDefaultPrompt = ``

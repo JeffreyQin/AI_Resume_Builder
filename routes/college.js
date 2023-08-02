@@ -3,10 +3,11 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const router = express.Router();
 const { PythonShell } = require('python-shell');
+const { modifyJsonFile } = require('modify-json-file');
+const path = require('path');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'opencv/')
@@ -46,10 +47,57 @@ router.use('/getinfo/backward', async (req, res) => {
 router.post('/summarize', upload.single('transcript'), async (req, res) => {
     const transcriptText = await PythonShell.run('./opencv/preprocessing.py', null);
     const infoChat = require('../openai/getInfo/chat.json').prompt;
-    const chatSummary = await sumGPTGenerate.summarize(infoChat, 0);
-    const uploadSummary = await sumGPTGenerate.summarize(transcriptText, 1);
-    console.log(chatSummary);
-    console.log(uploadSummary);
+
+    const summaryReq = [
+        sumGPTGenerate.summarize(infoChat, 0),
+        sumGPTGenerate.summarize(transcriptText, 1)
+    ]
+    const summaryRes = await Promise.all(summaryReq);
+    chatSummary = summaryRes[0];
+    uploadSummary = summaryRes[1];
+
+    await modifyJsonFile(
+        path.join(__dirname, '../openai/summarize/summary.json'),
+        {
+            profile: chatSummary,
+            transcript: uploadSummary
+        }
+    );
+    res.end();
+});
+
+router.get('/getsummary', async (req, res) => {
+    const summary = require('../openai/summarize/summary.json');
+    res.json(summary);
+})
+
+router.post('/changeinfo', async (req, res) => {
+    const summary = require('../openai/summarize/summary.json');
+    if (req.body.option == 0) {
+        const subsummary = summary.profile;
+        subsummary[req.body.key] = req.body.info;
+        await modifyJsonFile(
+            path.join(__dirname, '../openai/summarize/summary.json'),
+            {
+                profile: subsummary
+            }
+        );
+    } else {
+        const subsummary = summary.transcript;
+        subsummary[req.body.key] = req.body.info;
+        await modifyJsonFile(
+            path.join(__dirname, '../openai/summarize/summary.json'),
+            {
+                transcript: subsummary
+            }
+        );
+    }
+    res.end();
+})
+
+router.use('/createresume', (req, res) => {
+    console.log('ee')
+    res.end();
 });
 
 module.exports = router;
