@@ -10,23 +10,23 @@
         },
         {
             "role": "assistant",
-            "content": "Great! Let's get started on building your college application resume. I am glad to help you! \n\nFirst, may you please provide your full name?"
+            "content": "Let's get started! To kick things off, could you please tell me your name?"
         },
         {
             "role": "user",
-            "content": "tommy li"
+            "content": "Tommy"
         },
         {
             "role": "assistant",
-            "content": "Nice to meet you Tommy Li! Next, could you please provide your phone number?"
+            "content": "Great, Tommy! Nice to meet you! Now, can I get your phone number?"
         },
         {
             "role": "user",
-            "content": "213121231"
+            "content": "22412141421"
         },
         {
             "role": "assistant",
-            "content": "Excellent, Tommy! Moving on, could you provide your personal email, please?"
+            "content": "Got it! Now, could I trouble you for your personal email?"
         },
         {
             "role": "user",
@@ -34,55 +34,47 @@
         },
         {
             "role": "assistant",
-            "content": "Great, Tommy! Now, could you kindly provide your LinkedIn account username?"
+            "content": "Fantastic, Tommy! What about your LinkedIn account username? If you do not have a LinkedIn account, you may choose to skip this step."
         },
         {
             "role": "user",
-            "content": "no"
+            "content": "i dont have a linkedin"
         },
         {
             "role": "assistant",
-            "content": "No problem at all! We can move on. What about your GitHub account username? Do you have one?"
+            "content": "That's perfectly fine, Tommy! How about a GitHub account username? This too can be skipped if not available."
         },
         {
             "role": "user",
-            "content": "bayview secondary"
+            "content": "i don't either"
         },
         {
             "role": "assistant",
-            "content": "Oh, I think there might have been a misunderstanding. I was asking for your GitHub username - it looks like you provided a name that could be a school. Do you have a GitHub account?"
+            "content": "No worries at all, Tommy! Let's move on. Could you please tell me the name of your high school?"
         },
         {
             "role": "user",
-            "content": "githubname222"
+            "content": "li high school"
         },
         {
             "role": "assistant",
-            "content": "Awesome, thanks for sharing that, Tommy! Now let's move on to your high school details. May I know the name of your high school, please?"
+            "content": "Great! Now, can you tell me your high school graduation year?"
         },
         {
             "role": "user",
-            "content": "bayview secondary"
+            "content": "2023"
         },
         {
             "role": "assistant",
-            "content": "Nice! Good to know that you studied at Bayview Secondary School. What year did you graduate?"
+            "content": "Great job, Tommy! Now, let's talk about your high school GPA. What was it?"
         },
         {
             "role": "user",
-            "content": "2024"
+            "content": "4? around that"
         },
         {
             "role": "assistant",
-            "content": "Great, you're a recent graduate! Can you kindly tell me your GPA in high school?\n"
-        },
-        {
-            "role": "user",
-            "content": "around 4.2"
-        },
-        {
-            "role": "assistant",
-            "content": "Wow, impressive GPA, Tommy! Now let's dive into your high school activities. Could you name your first organization, please?"
+            "content": "Well done, Tommy! Now, let's highlight your high school activities. Could you please provide the name of an organization you were part of?"
         },
         {
             "role": "user",
@@ -90,39 +82,95 @@
         },
         {
             "role": "assistant",
-            "content": "Fantastic! Being a part of Math Club is a great value-add. What position did you hold in the Math Club?"
+            "content": "Math Club, terrific! What position did you hold in the Math Club?"
         },
         {
             "role": "user",
-            "content": "i was the president"
+            "content": "president"
         },
         {
             "role": "assistant",
-            "content": "Good job, being a president shows leadership! Now, could you provide the start and end month and years of your position as the president of Math Club?"
+            "content": "Impressive, Tommy! Now tell me, from which month and year did you start in this position?"
         },
         {
             "role": "user",
-            "content": "04/22 to 06/23"
+            "content": "from august 2022 to august 2023"
         },
         {
             "role": "assistant",
-            "content": "Awesome! Could you tell me more about your contributions and involvements in the Math Club as president?"
+            "content": "Awesome! Now, could you tell me a bit about your contributions and involvements as the president of the Math Club?"
         },
         {
             "role": "user",
-            "content": "i expanded club extension and made social media post"
+            "content": "i was part of the club expansion outreach and collaborated with astronomy club. i also made instagram posts where more than 100 people looked at. I also taught people math"
         },
         {
             "role": "assistant",
-            "content": "Great job taking initiative in expanding the club and increasing its online presence! Would you like to add another high school activity? If not, we can proceed to high school awards."
+            "content": "Sounds like you made a significant impact, Tommy! Excellent work! Would you like to add another high school activity or should we move on to high school awards?"
         },
         {
             "role": "user",
-            "content": "no"
+            "content": "yes another one"
         },
         {
             "role": "assistant",
-            "content": "No problem at all, Tommy. Now, let's move on to your high school awards. Can you tell me the name of your first award?"
+            "content": "Fantastic, Tommy! Please provide the name of another organization you were part of in high school."
+        },
+        {
+            "role": "user",
+            "content": "tom foundation"
+        },
+        {
+            "role": "assistant",
+            "content": "Awesome, you were part of the Tom Foundation! What was your role there?"
+        },
+        {
+            "role": "user",
+            "content": "i was the founder"
+        },
+        {
+            "role": "assistant",
+            "content": "Impressive! Could you tell me the start and end month and year of your involvement with the Tom Foundation?"
+        },
+        {
+            "role": "user",
+            "content": "septemeber 2022"
+        },
+        {
+            "role": "assistant",
+            "content": "Sounds great! How about your involvement and contributions to the Tom Foundation?"
+        },
+        {
+            "role": "user",
+            "content": "by the way my end year was october 2023"
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you for the update, Tommy! So, from September 2022 to October 2023. Now, let's talk about your contributions and involvements within the Tom Foundation. What were some of the things you accomplished?"
+        },
+        {
+            "role": "user",
+            "content": "I taught more than 20 kids how to read. I also raised charity that donated more than 300 in dollars"
+        },
+        {
+            "role": "assistant",
+            "content": "It sounds like you've positively impacted many lives, Tommy! Your actions truly embody the spirit of community! Would you like to add another high school activity, or should we move on to high school awards?"
+        },
+        {
+            "role": "user",
+            "content": "more on "
+        },
+        {
+            "role": "assistant",
+            "content": "Sure thing, Tommy! Let's add another one. Could you provide the name of another organization or club you were part of in high school?"
+        },
+        {
+            "role": "user",
+            "content": "i want to move on to school awards"
+        },
+        {
+            "role": "assistant",
+            "content": "My apologies for the confusion earlier, Tommy! Let's indeed proceed to high school awards then. Can you please share the name of an award you won during high school?"
         },
         {
             "role": "user",
@@ -130,95 +178,7 @@
         },
         {
             "role": "assistant",
-            "content": "Well done on your distinction in the math contest! Could you please tell me the organization that issued this award?"
-        },
-        {
-            "role": "user",
-            "content": "math association of america"
-        },
-        {
-            "role": "assistant",
-            "content": "That's a prestigious award, Tommy! What was the month and year you received this award?"
-        },
-        {
-            "role": "user",
-            "content": "06/21"
-        },
-        {
-            "role": "assistant",
-            "content": "Good job! Can you provide a description or tell more about this award?"
-        },
-        {
-            "role": "user",
-            "content": "yes"
-        },
-        {
-            "role": "assistant",
-            "content": "Great! Please describe your 'Math Contest Distinction' award in detail."
-        },
-        {
-            "role": "user",
-            "content": "it's top 5% in north america"
-        },
-        {
-            "role": "assistant",
-            "content": "That's a remarkable achievement, Tommy! Would you like to add another high school award? If not, we can proceed to your test scores."
-        },
-        {
-            "role": "user",
-            "content": "yes"
-        },
-        {
-            "role": "assistant",
-            "content": "Okay, fantastic! Could you please provide the name of your next high school award?"
-        },
-        {
-            "role": "user",
-            "content": "book award"
-        },
-        {
-            "role": "assistant",
-            "content": "Great! Which organization issued the Book Award?"
-        },
-        {
-            "role": "user",
-            "content": "it was my high school"
-        },
-        {
-            "role": "assistant",
-            "content": "That's really nice, Tommy! When did you receive this award? What is the month and year?"
-        },
-        {
-            "role": "user",
-            "content": "2022 july"
-        },
-        {
-            "role": "assistant",
-            "content": "Nice! Could you kindly provide a short description of this award?"
-        },
-        {
-            "role": "user",
-            "content": "top score in the grade"
-        },
-        {
-            "role": "assistant",
-            "content": "Very impressive, Tommy! Would you like to add another high school award or shall we proceed to your test scores?"
-        },
-        {
-            "role": "user",
-            "content": "yes add another"
-        },
-        {
-            "role": "assistant",
-            "content": "Absolutely, Tommy! What's the name of the next high school award you want to add?"
-        },
-        {
-            "role": "user",
-            "content": "li award"
-        },
-        {
-            "role": "assistant",
-            "content": "Interesting! Can you please share which organization awarded the Li Award?"
+            "content": "Congratulations on your Math Contest Distinction, Tommy! That's quite an achievement! Could you tell me which organization issued this award?"
         },
         {
             "role": "user",
@@ -226,79 +186,31 @@
         },
         {
             "role": "assistant",
-            "content": "That's very cool, Tommy! Could you mention the month and the year when you received this Li Award?"
+            "content": "Fantastic! Now, could you share the month and year you received this award from the LI Foundation?"
         },
         {
             "role": "user",
-            "content": "i don't remember"
+            "content": "august 2022"
         },
         {
             "role": "assistant",
-            "content": "That's okay, Tommy! We can move on. Can you describe what the Li Award was for?"
+            "content": "Awesome! Now, please provide a brief description of this award - what it signifies, the criteria for winning it etc."
         },
         {
             "role": "user",
-            "content": "it's for writing \"li\" for the most amount of time"
+            "content": "i placed in the top 3% of all the participant. which include from china, the US and canada."
         },
         {
             "role": "assistant",
-            "content": "That's quite unique, Tommy! Do you want to add more high school awards or shall we move on to test scores?"
+            "content": "Fantastic achievement, Tommy! Being in the top 3% among international participants is truly commendable! Would you like to add another high school award, or should we proceed to your test scores?"
         },
         {
             "role": "user",
-            "content": "move on"
+            "content": "I have no test scores. skip test scores"
         },
         {
             "role": "assistant",
-            "content": "Alright, Tommy! Let's proceed to your test scores. Could you please provide the name of the first test?"
-        },
-        {
-            "role": "user",
-            "content": "SAT"
-        },
-        {
-            "role": "assistant",
-            "content": "Great! Can you please share the score you attained in SAT?"
-        },
-        {
-            "role": "user",
-            "content": "what was the maximum score"
-        },
-        {
-            "role": "assistant",
-            "content": "The maximum composite score for the SAT is 1600, which is composed of a maximum 800 points for each of Mathematics and Evidence-Based Reading and Writing. What was your score, Tommy?"
-        },
-        {
-            "role": "user",
-            "content": "i think i got like 1570"
-        },
-        {
-            "role": "assistant",
-            "content": "That's an exceptional score, Tommy! Well done! What was the month and year when you took the SAT?"
-        },
-        {
-            "role": "user",
-            "content": "last year"
-        },
-        {
-            "role": "assistant",
-            "content": "Could you provide me with the specific month and year? It'll be helpful for your resume."
-        },
-        {
-            "role": "user",
-            "content": "2023 june"
-        },
-        {
-            "role": "assistant",
-            "content": "Fantastic, Tommy! Would you like to add another test score or is that all for now? "
-        },
-        {
-            "role": "user",
-            "content": "that's all"
-        },
-        {
-            "role": "assistant",
-            "content": "Great work, Tommy! Now that we have all the details for the resume, the last thing I need from you is your high school transcript. Can you please provide that?"
+            "content": "Absolutely, Tommy! Now, as the final step, could you please provide your high school transcript?"
         }
     ]
 }
