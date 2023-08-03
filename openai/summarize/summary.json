@@ -1,51 +1,49 @@
 {
     "profile": {
-        "name": "Tommy Li",
-        "phone number": "213121231",
+        "name": "Tommy",
+        "phone number": "22412141421",
         "personal email": "tommy@gmail.com",
         "LinkedIn account username": "n.a.",
-        "Github account username": "githubname222",
-        "high school name": "Bayview Secondary School",
-        "high school graduation year": "2024",
-        "high school GPA": 4.2,
+        "Github account username": "n.a.",
+        "high school name": "LI High School",
+        "high school graduation year": "2023",
+        "high school GPA": 4,
         "high school activities": [
             {
                 "organization name": "Math Club",
                 "position": "President",
-                "start date": "04/22",
-                "end date": "06/23",
-                "involvements": "Expanded club extension and made social media post"
+                "start date": "08/2022",
+                "end date": "08/2023",
+                "description": [
+                    "Spearheaded the club expansion outreach",
+                    "Collaborated with the Astronomy Club",
+                    "Managed social media posts that had a reach of over 100 individuals",
+                    "Taught Math to members, enhancing their mathematical abilities"
+                ]
+            },
+            {
+                "organization name": "Tom Foundation",
+                "position": "Founder",
+                "start date": "09/2022",
+                "end date": "10/2023",
+                "description": [
+                    "Founded the organization with the goal of helping children enhance their literary skills",
+                    "Played an instrumental role in teaching more than 20 children how to read",
+                    "Raised charity funds amounting to over $300"
+                ]
             }
         ],
         "high school awards": [
             {
                 "award name": "Math Contest Distinction",
-                "organization": "Math Association of America",
-                "date attained": "06/21",
-                "description": "Top 5% in North America"
-            },
-            {
-                "award name": "Book Award",
-                "organization": "Bayview Secondary School",
-                "date attained": "07/22",
-                "description": "Top score in the grade"
-            },
-            {
-                "award name": "Li Award",
-                "organization": "Li Foundation",
-                "date attained": "n.a.",
-                "description": "For writing 'Li' for the most amount of time"
+                "organization": "LI Foundation",
+                "date attained": "08/2022",
+                "description": "Secured a position in the top 3% of all participants from China, the US, and Canada"
             }
         ],
-        "test scores": [
-            {
-                "test name": "SAT",
-                "score": "1570",
-                "date attained": "06/23"
-            }
-        ]
+        "test scores": "n.a."
     },
     "transcript": {
-        "Summary": "The document contains two lines of text, each divided into two separate parts due to line breaks. It is an example document without any specific context."
+        "summary": "The document contains two lines of text, expressing that it's an example text and indicating their sequential order."
     }
 }
