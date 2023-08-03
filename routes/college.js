@@ -21,7 +21,6 @@ const upload = multer({ storage: storage });
 const infoPromptManager = require('../openai/getInfo/infoPromptManager');
 const infoGPTGenerate = require('../openai/getInfo/infoGPTGenerate');
 const sumGPTGenerate = require('../openai/summarize/sumGPTGenerate');
-const msgManager = require('../msgManager.json');
 
 router.use('/init', async (req, res) => {
     await infoPromptManager.resetPrompt(0);

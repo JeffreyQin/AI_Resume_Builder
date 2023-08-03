@@ -1,6 +1,5 @@
 const { modifyJsonFile } = require('modify-json-file');
 const path = require('path');
-const msgManager = require('../../msgManager.json');
 
 exports.getPrompt = async (newPrompt) => {
     const prompt = require('./chat.json').prompt;
@@ -27,7 +26,7 @@ exports.backPrompt = async () => {
         { 
             prompt: modifiedPrompt
         }
-    )
+    );
 }
 
 exports.resetPrompt = async (option) => {
@@ -55,19 +54,37 @@ function getDefaultPrompt(option) {
 
 exports.collegeDefaultPrompt = `
         Instruction:
-        \n1. In the completion, proactively ask the user for the information needed (indicated below), one at a time.
-        \n2. Offer user the option to skip the current question by typing 'skip'.
-        \n3. Ask the question again if the user fails to provide the required information.
-        \n4. When all unskipped questions are answered, respond with'${msgManager.COLLEGE_RESUME_INFO_READY}'.
+        \n1. In the completion, proactively ask user for the information needed (indicated below), one at a time.
+        \n2. Ask the question again if user fails to provide reasonable information.
+        \n3. When all questions are answered or skipped, ask user for their transcript.
         \nInformation needed:
         \n1. name
-        \n2. age
+        \n2. phone number
         \n3. personal email
-        \n4. github account
-        \n5. linkedin account
+        \n4. LinkedIn account username
+        \n5. GitHub account username
         \n6. high school name
         \n7. high school graduation year
         \n8. high school GPA
+        \n9. high school activity. For each activity, separately ask for
+        \na. name of organization
+        \nb. position in organization
+        \nc. start month and year
+        \nd. end month and year
+        \ne. contribution and involvements
+        \nf. ask if user wants to add another high school activity. If so, ask the previous questions again. If not, proceed to high school awards
+        \n10. high school award. For each award, separately ask for
+        \na. name of award
+        \nb. issuing organization
+        \nc. month and year attained
+        \nd. award description
+        \ne. ask if user wants to add another high school award. If so, ask the previous questions again. If not, proceed to test scores.
+        \n11. test score. For each test score, separately ask for
+        \na. name of test
+        \nb. score attained
+        \nc. month and year attained
+        \nd. ask if user wants to add another test score. If so, ask the previous questions again
     `
+
 
 exports.jobDefaultPrompt = ``

@@ -1,15 +1,51 @@
 {
     "profile": {
-        "name": "tommy li",
-        "age": 18,
-        "personal email": "li@gmail.com",
-        "github account": "none",
-        "linkedin account": "username",
-        "high school name": "like high school",
-        "high school graduation year": 2023,
-        "high school GPA": "around 4"
+        "name": "Tommy Li",
+        "phone number": "213121231",
+        "personal email": "tommy@gmail.com",
+        "LinkedIn account username": "n.a.",
+        "Github account username": "githubname222",
+        "high school name": "Bayview Secondary School",
+        "high school graduation year": "2024",
+        "high school GPA": 4.2,
+        "high school activities": [
+            {
+                "organization name": "Math Club",
+                "position": "President",
+                "start date": "04/22",
+                "end date": "06/23",
+                "involvements": "Expanded club extension and made social media post"
+            }
+        ],
+        "high school awards": [
+            {
+                "award name": "Math Contest Distinction",
+                "organization": "Math Association of America",
+                "date attained": "06/21",
+                "description": "Top 5% in North America"
+            },
+            {
+                "award name": "Book Award",
+                "organization": "Bayview Secondary School",
+                "date attained": "07/22",
+                "description": "Top score in the grade"
+            },
+            {
+                "award name": "Li Award",
+                "organization": "Li Foundation",
+                "date attained": "n.a.",
+                "description": "For writing 'Li' for the most amount of time"
+            }
+        ],
+        "test scores": [
+            {
+                "test name": "SAT",
+                "score": "1570",
+                "date attained": "06/23"
+            }
+        ]
     },
     "transcript": {
-        "Summary": "18"
+        "Summary": "The document contains two lines of text, each divided into two separate parts due to line breaks. It is an example document without any specific context."
     }
 }

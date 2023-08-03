@@ -6,11 +6,11 @@
         },
         {
             "role": "user",
-            "content": "\n        Instruction:\n        \n1. In the completion, proactively ask the user for the information needed (indicated below), one at a time.\n        \n2. Offer user the option to skip the current question by typing 'skip'.\n        \n3. Ask the question again if the user fails to provide the required information.\n        \n4. When all unskipped questions are answered, respond with'Please upload your transcript.'.\n        \nInformation needed:\n        \n1. name\n        \n2. age\n        \n3. personal email\n        \n4. github account\n        \n5. linkedin account\n        \n6. high school name\n        \n7. high school graduation year\n        \n8. high school GPA\n    "
+            "content": "\n        Instruction:\n        \n1. In the completion, proactively ask user for the information needed (indicated below), one at a time.\n        \n2. Ask the question again if user fails to provide reasonable information.\n        \n3. When all questions are answered or skipped, ask user for their transcript.\n        \nInformation needed:\n        \n1. name\n        \n2. phone number\n        \n3. personal email\n        \n4. LinkedIn account username\n        \n5. GitHub account username\n        \n6. high school name\n        \n7. high school graduation year\n        \n8. high school GPA\n        \n9. high school activity. For each activity, separately ask for\n        \na. name of organization\n        \nb. position in organization\n        \nc. start month and year\n        \nd. end month and year\n        \ne. contribution and involvements\n        \nf. ask if user wants to add another high school activity. If so, ask the previous questions again. If not, proceed to high school awards\n        \n10. high school award. For each award, separately ask for\n        \na. name of award\n        \nb. issuing organization\n        \nc. month and year attained\n        \nd. award description\n        \ne. ask if user wants to add another high school award. If so, ask the previous questions again. If not, proceed to test scores.\n        \n11. test score. For each test score, separately ask for\n        \na. name of test\n        \nb. score attained\n        \nc. month and year attained\n        \nd. ask if user wants to add another test score. If so, ask the previous questions again\n    "
         },
         {
             "role": "assistant",
-            "content": "Awesome! Let's build your college resume together. First, what's your full name?"
+            "content": "Great! Let's get started on building your college application resume. I am glad to help you! \n\nFirst, may you please provide your full name?"
         },
         {
             "role": "user",
@@ -18,23 +18,23 @@
         },
         {
             "role": "assistant",
-            "content": "Great, Tommy Li! Now, may I know your age?"
+            "content": "Nice to meet you Tommy Li! Next, could you please provide your phone number?"
         },
         {
             "role": "user",
-            "content": "18"
+            "content": "213121231"
         },
         {
             "role": "assistant",
-            "content": "Fantastic, Tommy! Could you please share your personal email address? Remember, you can type 'skip' if you wish to move to the next question."
+            "content": "Excellent, Tommy! Moving on, could you provide your personal email, please?"
         },
         {
             "role": "user",
-            "content": "li@gmail.com"
+            "content": "tommy@gmail.com"
         },
         {
             "role": "assistant",
-            "content": "Excellent! Do you have a GitHub account, Tommy? If yes, could you please share the username? Again, feel free to skip this detail if you prefer not to share."
+            "content": "Great, Tommy! Now, could you kindly provide your LinkedIn account username?"
         },
         {
             "role": "user",
@@ -42,47 +42,263 @@
         },
         {
             "role": "assistant",
-            "content": "That's fine, Tommy! Moving on, do you have a LinkedIn account? If yes, may I have your LinkedIn username?"
+            "content": "No problem at all! We can move on. What about your GitHub account username? Do you have one?"
         },
         {
             "role": "user",
-            "content": "username"
+            "content": "bayview secondary"
         },
         {
             "role": "assistant",
-            "content": "Nice work! Now, can you tell me the name of your high school?"
+            "content": "Oh, I think there might have been a misunderstanding. I was asking for your GitHub username - it looks like you provided a name that could be a school. Do you have a GitHub account?"
         },
         {
             "role": "user",
-            "content": ""
+            "content": "githubname222"
         },
         {
             "role": "assistant",
-            "content": "I'm sorry, but it seems like your message didn't include the required information. Could you please share the name of your high school?"
+            "content": "Awesome, thanks for sharing that, Tommy! Now let's move on to your high school details. May I know the name of your high school, please?"
         },
         {
             "role": "user",
-            "content": "like high school"
+            "content": "bayview secondary"
         },
         {
             "role": "assistant",
-            "content": "Thanks for sharing that, Tommy! And what year did you or will you graduate from Like High School?"
+            "content": "Nice! Good to know that you studied at Bayview Secondary School. What year did you graduate?"
         },
         {
             "role": "user",
-            "content": "2023"
+            "content": "2024"
         },
         {
             "role": "assistant",
-            "content": "Perfect! Lastly, what's your high school GPA?"
+            "content": "Great, you're a recent graduate! Can you kindly tell me your GPA in high school?\n"
         },
         {
             "role": "user",
-            "content": "around 4"
+            "content": "around 4.2"
         },
         {
             "role": "assistant",
-            "content": "Fabulous job, Tommy! We've gathered all the necessary information now. Please upload your transcript."
+            "content": "Wow, impressive GPA, Tommy! Now let's dive into your high school activities. Could you name your first organization, please?"
+        },
+        {
+            "role": "user",
+            "content": "math club"
+        },
+        {
+            "role": "assistant",
+            "content": "Fantastic! Being a part of Math Club is a great value-add. What position did you hold in the Math Club?"
+        },
+        {
+            "role": "user",
+            "content": "i was the president"
+        },
+        {
+            "role": "assistant",
+            "content": "Good job, being a president shows leadership! Now, could you provide the start and end month and years of your position as the president of Math Club?"
+        },
+        {
+            "role": "user",
+            "content": "04/22 to 06/23"
+        },
+        {
+            "role": "assistant",
+            "content": "Awesome! Could you tell me more about your contributions and involvements in the Math Club as president?"
+        },
+        {
+            "role": "user",
+            "content": "i expanded club extension and made social media post"
+        },
+        {
+            "role": "assistant",
+            "content": "Great job taking initiative in expanding the club and increasing its online presence! Would you like to add another high school activity? If not, we can proceed to high school awards."
+        },
+        {
+            "role": "user",
+            "content": "no"
+        },
+        {
+            "role": "assistant",
+            "content": "No problem at all, Tommy. Now, let's move on to your high school awards. Can you tell me the name of your first award?"
+        },
+        {
+            "role": "user",
+            "content": "math contest distinction"
+        },
+        {
+            "role": "assistant",
+            "content": "Well done on your distinction in the math contest! Could you please tell me the organization that issued this award?"
+        },
+        {
+            "role": "user",
+            "content": "math association of america"
+        },
+        {
+            "role": "assistant",
+            "content": "That's a prestigious award, Tommy! What was the month and year you received this award?"
+        },
+        {
+            "role": "user",
+            "content": "06/21"
+        },
+        {
+            "role": "assistant",
+            "content": "Good job! Can you provide a description or tell more about this award?"
+        },
+        {
+            "role": "user",
+            "content": "yes"
+        },
+        {
+            "role": "assistant",
+            "content": "Great! Please describe your 'Math Contest Distinction' award in detail."
+        },
+        {
+            "role": "user",
+            "content": "it's top 5% in north america"
+        },
+        {
+            "role": "assistant",
+            "content": "That's a remarkable achievement, Tommy! Would you like to add another high school award? If not, we can proceed to your test scores."
+        },
+        {
+            "role": "user",
+            "content": "yes"
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, fantastic! Could you please provide the name of your next high school award?"
+        },
+        {
+            "role": "user",
+            "content": "book award"
+        },
+        {
+            "role": "assistant",
+            "content": "Great! Which organization issued the Book Award?"
+        },
+        {
+            "role": "user",
+            "content": "it was my high school"
+        },
+        {
+            "role": "assistant",
+            "content": "That's really nice, Tommy! When did you receive this award? What is the month and year?"
+        },
+        {
+            "role": "user",
+            "content": "2022 july"
+        },
+        {
+            "role": "assistant",
+            "content": "Nice! Could you kindly provide a short description of this award?"
+        },
+        {
+            "role": "user",
+            "content": "top score in the grade"
+        },
+        {
+            "role": "assistant",
+            "content": "Very impressive, Tommy! Would you like to add another high school award or shall we proceed to your test scores?"
+        },
+        {
+            "role": "user",
+            "content": "yes add another"
+        },
+        {
+            "role": "assistant",
+            "content": "Absolutely, Tommy! What's the name of the next high school award you want to add?"
+        },
+        {
+            "role": "user",
+            "content": "li award"
+        },
+        {
+            "role": "assistant",
+            "content": "Interesting! Can you please share which organization awarded the Li Award?"
+        },
+        {
+            "role": "user",
+            "content": "li foundation"
+        },
+        {
+            "role": "assistant",
+            "content": "That's very cool, Tommy! Could you mention the month and the year when you received this Li Award?"
+        },
+        {
+            "role": "user",
+            "content": "i don't remember"
+        },
+        {
+            "role": "assistant",
+            "content": "That's okay, Tommy! We can move on. Can you describe what the Li Award was for?"
+        },
+        {
+            "role": "user",
+            "content": "it's for writing \"li\" for the most amount of time"
+        },
+        {
+            "role": "assistant",
+            "content": "That's quite unique, Tommy! Do you want to add more high school awards or shall we move on to test scores?"
+        },
+        {
+            "role": "user",
+            "content": "move on"
+        },
+        {
+            "role": "assistant",
+            "content": "Alright, Tommy! Let's proceed to your test scores. Could you please provide the name of the first test?"
+        },
+        {
+            "role": "user",
+            "content": "SAT"
+        },
+        {
+            "role": "assistant",
+            "content": "Great! Can you please share the score you attained in SAT?"
+        },
+        {
+            "role": "user",
+            "content": "what was the maximum score"
+        },
+        {
+            "role": "assistant",
+            "content": "The maximum composite score for the SAT is 1600, which is composed of a maximum 800 points for each of Mathematics and Evidence-Based Reading and Writing. What was your score, Tommy?"
+        },
+        {
+            "role": "user",
+            "content": "i think i got like 1570"
+        },
+        {
+            "role": "assistant",
+            "content": "That's an exceptional score, Tommy! Well done! What was the month and year when you took the SAT?"
+        },
+        {
+            "role": "user",
+            "content": "last year"
+        },
+        {
+            "role": "assistant",
+            "content": "Could you provide me with the specific month and year? It'll be helpful for your resume."
+        },
+        {
+            "role": "user",
+            "content": "2023 june"
+        },
+        {
+            "role": "assistant",
+            "content": "Fantastic, Tommy! Would you like to add another test score or is that all for now? "
+        },
+        {
+            "role": "user",
+            "content": "that's all"
+        },
+        {
+            "role": "assistant",
+            "content": "Great work, Tommy! Now that we have all the details for the resume, the last thing I need from you is your high school transcript. Can you please provide that?"
         }
     ]
 }
