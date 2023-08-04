@@ -71,9 +71,8 @@ readyButton.addEventListener('click', async () => {
             body: formData,
         });
     }
-    window.location.href = 'collegeFini.html';
+    window.location.href = 'collegeResume.html';
 });
-
 
 function initPanelUpdate(message) {
     const botText = document.createElement('p');

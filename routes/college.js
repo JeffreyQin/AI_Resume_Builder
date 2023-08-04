@@ -42,7 +42,6 @@ router.use('/getinfo/backward', async (req, res) => {
     res.end();
 });
 
-
 router.post('/summarize', upload.single('transcript'), async (req, res) => {
     const transcriptText = await PythonShell.run('./opencv/preprocessing.py', null);
     const infoChat = require('../openai/getInfo/chat.json').prompt;
@@ -65,38 +64,10 @@ router.post('/summarize', upload.single('transcript'), async (req, res) => {
     res.end();
 });
 
-router.get('/getsummary', async (req, res) => {
-    const summary = require('../openai/summarize/summary.json');
-    res.json(summary);
-})
-
-router.post('/changeinfo', async (req, res) => {
-    const summary = require('../openai/summarize/summary.json');
-    if (req.body.option == 0) {
-        const subsummary = summary.profile;
-        subsummary[req.body.key] = req.body.info;
-        await modifyJsonFile(
-            path.join(__dirname, '../openai/summarize/summary.json'),
-            {
-                profile: subsummary
-            }
-        );
-    } else {
-        const subsummary = summary.transcript;
-        subsummary[req.body.key] = req.body.info;
-        await modifyJsonFile(
-            path.join(__dirname, '../openai/summarize/summary.json'),
-            {
-                transcript: subsummary
-            }
-        );
-    }
-    res.end();
-})
-
-router.use('/createresume', (req, res) => {
-    console.log('ee')
-    res.end();
+router.get('/getprofile', (req, res) => {
+    const profile = require('../openai/summarize/summary.json').profile;
+    res.send(profile);    
 });
+
 
 module.exports = router;

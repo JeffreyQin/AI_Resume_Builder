@@ -16,6 +16,7 @@ exports.generate = async (input) => {
     });
 
     const response = completion["data"]["choices"][0]["message"]["content"].replace(/\\n/g, '\\\\n');
+    
     promptManager.updatePrompt(request, response);
     return response;
 }
