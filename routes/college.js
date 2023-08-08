@@ -31,7 +31,7 @@ router.use('/init', async (req, res) => {
 
 router.post('/getinfo/forward', async (req, res) => {
     const response = await infoGPTGenerate.generate(req.body.input);
-    if (response.toLowerCase().includes('transcript')) {
+    if (response.toLowerCase().includes('transcript') && response.toLowerCase().includes('gathered')) {
         res.json({ status: 0, message: response });
     } else {
         res.json({ status: 1, message: response });

@@ -77,7 +77,7 @@ function constructInfoPanel(summary) {
         educationPanel.appendChild(infoSubpanel);
     }
 
-    for (activity of summary.profile.activites) {
+    for (activity of summary["profile"]["high school activities"]) {
         const activitySubpanel = document.createElement('div');
         Object.keys(activity).forEach((key, index) => {
             const infoSubpanel = document.createElement('div');
@@ -85,7 +85,11 @@ function constructInfoPanel(summary) {
             const valueLabel = document.createElement('label');
             const changeButton = document.createElement('button');
             keyLabel.innerHTML = `<b>${key}: </b>`;
-            valueLabel.innerHTML = summary["profile"][key];
+            if (key == 'description') {
+                valueLabel.innerHTML = JSON.stringify(activity[key]);
+            } else {
+                valueLabel.innerHTML = activity[key];
+            }
             changeButton.innerHTML = "Change"
             infoSubpanel.appendChild(keyLabel);
             infoSubpanel.appendChild(valueLabel);
@@ -93,6 +97,42 @@ function constructInfoPanel(summary) {
             activitySubpanel.appendChild(infoSubpanel);
         });
         activityPanel.appendChild(activitySubpanel);
+    }
+
+    for (award of summary["profile"]["high school awards"]) {
+        const awardSubpanel = document.createElement('div');
+        Object.keys(award).forEach((key, index) => {
+            const infoSubpanel = document.createElement('div');
+            const keyLabel = document.createElement('label');
+            const valueLabel = document.createElement('label');
+            const changeButton = document.createElement('button');
+            keyLabel.innerHTML = `<b>${key}: </b>`;
+            valueLabel.innerHTML = award[key];
+            changeButton.innerHTML = "Change"
+            infoSubpanel.appendChild(keyLabel);
+            infoSubpanel.appendChild(valueLabel);
+            infoSubpanel.appendChild(changeButton);
+            awardSubpanel.appendChild(infoSubpanel);
+        });
+        awardPanel.appendChild(awardSubpanel);
+    }
+
+    for (test of summary["profile"]["test scores"]) {
+        const testSubpanel = document.createElement('div');
+        Object.keys(test).forEach((key, index) => {
+            const infoSubpanel = document.createElement('div');
+            const keyLabel = document.createElement('label');
+            const valueLabel = document.createElement('label');
+            const changeButton = document.createElement('button');
+            keyLabel.innerHTML = `<b>${key}: </b>`;
+            valueLabel.innerHTML = test[key];
+            changeButton.innerHTML = "Change"
+            infoSubpanel.appendChild(keyLabel);
+            infoSubpanel.appendChild(valueLabel);
+            infoSubpanel.appendChild(changeButton);
+            testSubpanel.appendChild(infoSubpanel);
+        });
+        testPanel.appendChild(testSubpanel);
     }
     
 }
