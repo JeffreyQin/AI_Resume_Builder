@@ -1,67 +1,76 @@
 {
     "profile": {
-        "name": "Jeff Tommy",
-        "field of interest": "Computer Science and Software Engineering",
-        "phone number": "214124112",
-        "personal email": "tommy@email.com",
+        "name": "Jeff Li",
+        "field of interest": "computer science",
+        "phone number": "n.a.",
+        "personal email": "n.a.",
         "LinkedIn account username": "n.a.",
-        "GitHub account username": "dfadsa232",
+        "GitHub account username": "n.a.",
         "personal website": "n.a.",
-        "high school name": "Tommy High School",
+        "high school name": "Tommy Secondary School",
         "high school starting year": "2021",
-        "high school graduation year": "2024",
-        "high school GPA": "4.2",
+        "high school graduation year": "2022",
+        "high school diploma": "IB diploma",
         "high school activities": [
             {
                 "organization name": "Math Club",
                 "position": "President",
-                "start date": "07/2021",
-                "end date": "07/2023",
+                "start date": "07/2023",
+                "end date": "08/2023",
                 "description": [
-                    "Increased club membership by 50 individuals",
-                    "Facilitated math lectures on Linear Algebra and Graph Theory"
+                    "Expanded club membership by 200 people.",
+                    "Planned for successful collaboration with physics club.",
+                    "Taught kids math on advanced topics like graph theory."
                 ]
             },
             {
-                "organization name": "Project 5K",
+                "organization name": "Li Foundation",
                 "position": "Founder",
-                "start date": "02/2023",
-                "end date": "02/2023",
+                "start date": "07/2023",
+                "end date": "08/2023",
                 "description": [
-                    "Raised 5 thousand dollars for charity",
-                    "Hosted assemblies to teach English to international students",
-                    "Developed a website for the organization and consistently made social media postings to advertise"
+                    "Raised charity funds of around 500 dollars.",
+                    "Donated books to students of lower grades."
+                ]
+            },
+            {
+                "organization name": "Physics Club",
+                "position": "Participant",
+                "start date": "07/2023",
+                "end date": "08/2024",
+                "description": [
+                    "Participated in many competitions and won numerous awards.",
+                    "Conducted intricate physics experiments."
                 ]
             }
         ],
         "high school awards": [
             {
                 "award name": "Math Contest Distinction",
-                "organization": "Math Association of Nigeria",
-                "date attained": "2023",
-                "description": "Attained a perfect score and placed in the top 10 among 10 thousand participants"
+                "organization": "Math Organization of America",
+                "date attained": "08/2023",
+                "description": "Placed in top 30 places out of thousands in a North American competition, achieving a perfect score."
             },
             {
                 "award name": "Book Award",
-                "organization": "My School",
-                "date attained": "07/2023",
-                "description": "Achieved the highest grade in 5 of the 8 courses at my school"
+                "organization": "Tommy High School",
+                "date attained": "08/2023",
+                "description": "Recognized for achieving the highest academic average among over 400 students."
             }
         ],
-        "test scores": [
-            {
-                "test name": "AP Physics",
-                "score attained": 5,
-                "date attained": "08/2022"
-            },
-            {
-                "test name": "AP Math",
-                "score attained": 4,
-                "date attained": "08/2022"
-            }
-        ]
+        "test scores": "n.a."
     },
     "transcript": {
-        "Summary": "The document consists of two main sentences. The first sentence reads, 'This is the first line of this text example'. The second sentence states 'This is the second line of the same text'."
+        "courses_taken": [
+            "English Ba 1",
+            "usimass Math fa 1",
+            "Camgraphy 7",
+            "DaneeiPE A100",
+            "Eashion Industry Am",
+            "Computer Applications 86",
+            "Culnary Skis BS",
+            "usiness Mtge ree"
+        ],
+        "GPA": "3.6"
     }
 }

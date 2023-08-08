@@ -20,6 +20,5 @@ exports.summarize = async (input, option) => {
         messages: request
     })
     const response = completion["data"]["choices"][0]["message"]["content"].replace(/\\n/g, '\\\\n');
-    console.log(response);
     return JSON.parse(response);
 }

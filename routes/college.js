@@ -5,6 +5,7 @@ const router = express.Router();
 const { PythonShell } = require('python-shell');
 const { modifyJsonFile } = require('modify-json-file');
 const path = require('path');
+const fs = require('fs');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +45,8 @@ router.use('/getinfo/backward', async (req, res) => {
 
 router.post('/summarize', upload.single('transcript'), async (req, res) => {
     const transcriptText = await PythonShell.run('./opencv/preprocessing.py', null);
-    const infoChat = require('../openai/getInfo/chat.json').prompt;
+    const infoChatStr = fs.readFileSync(path.join(__dirname, '../openai/getInfo/chat.json'), 'utf8');
+    const infoChat = JSON.parse(infoChatStr).prompt;
 
     const summaryReq = [
         sumGPTGenerate.summarize(infoChat, 0),
@@ -64,9 +66,12 @@ router.post('/summarize', upload.single('transcript'), async (req, res) => {
     res.end();
 });
 
-router.get('/getprofile', (req, res) => {
-    const profile = require('../openai/summarize/summary.json').profile;
-    res.send(profile);    
+router.get('/getsummary', (req, res) => {
+    const summaryStr = fs.readFileSync(path.join(__dirname, '../openai/summarize/summary.json'), 'utf8');
+    const summary = JSON.parse(summaryStr);
+    const profile = summary.profile;
+    const transcript = summary.transcript;
+    res.send({ profile: profile, transcript: transcript });
 });
 
 

@@ -5,7 +5,7 @@ import cv2;
 def extract_text(raw_image):
     processed_image = get_grayscale(raw_image)
     processed_image = set_threshold(processed_image)
-    processed_image = remove_noise(processed_image)
+    # processed_image = remove_noise(processed_image)
     text = pytesseract.image_to_string(processed_image)
     return text
 

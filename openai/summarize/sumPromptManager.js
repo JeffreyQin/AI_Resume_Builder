@@ -9,13 +9,9 @@ exports.chatGetPrompt = async (chat) => {
 }
 
 exports.uploadGetPrompt = async (text) => {
-    var instruction = uploadSumInstruction;
-    for (line of text) {
-        instruction += `\n${line}`;
-    }
     const prompt = [{
         "role": "user",
-        "content": instruction
+        "content": uploadSumInstruction(JSON.stringify(text))
     }];
     return prompt;
 }
@@ -35,9 +31,9 @@ const chatSumInstruction = `
     \n6. GitHub account username
     \n7. personal website
     \n8. high school name (include 'Secondary School')
-    \n9. high school starting year
+    \n9. high school starting year (in YYYY format)
     \n10. high school graduation year (in YYYY format)
-    \n11. high school GPA (number only, to one decimal place)
+    \n11. high school diploma
     \n12. high school activities
     \n13. high school awards 
     \n14. test scores 
@@ -57,5 +53,16 @@ const chatSumInstruction = `
     \n2. score attained (number only)
     \n3. date attained (in MM/YYYY format)
 `
-
-const uploadSumInstruction = 'The text below is scanned from a pdf document, where each line break represents a newline on the document. Summarize the document based on the text, and return a JSON only. The text:'
+function uploadSumInstruction(strArr) {
+    return `
+        ${strArr}
+        \nInstruction:
+        \n1. The string array above represents the text content from a high school transcript, where each string element represents a line on the transcript.
+        \n2. Based on content in the array, return a JSON that contains exactly the attributes indicated below.
+        \n3. Specification on the attributes are indicated in brackets after attribute names.
+        \n4. In the completion, return the JSON only, do not include anything else.
+        \nAttributes:
+        \n1. courses_taken (an array of up to 8 elements, no duplicates. Return n.a. if information cannot be obtained)
+        \n2. GPA (a number rounded to one decimal place. Return n.a. if information cannot be obtained)
+    `
+}

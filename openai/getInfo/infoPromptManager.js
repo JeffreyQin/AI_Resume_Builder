@@ -1,8 +1,10 @@
 const { modifyJsonFile } = require('modify-json-file');
 const path = require('path');
+const fs = require('fs');
 
 exports.getPrompt = async (newPrompt) => {
-    const prompt = require('./chat.json').prompt;
+    const promptStr = fs.readFileSync(path.join(__dirname, 'chat.json'), 'utf8');
+    const prompt = JSON.parse(promptStr).prompt;
     prompt.push({ "role": "user", "content": newPrompt });
     return prompt;
 }
@@ -18,7 +20,8 @@ exports.updatePrompt = async (newPrompt, newCompletion) => {
 }
 
 exports.backPrompt = async () => {
-    const modifiedPrompt = require('./chat.json').prompt;
+    const modifiedPromptStr = fs.readFileSync(path.join(__dirname, 'chat.json'), 'utf8');
+    const modifiedPrompt = JSON.parse(modifiedPromptStr).prompt;
     modifiedPrompt.pop();
     modifiedPrompt.pop();
     await modifyJsonFile(
@@ -68,7 +71,7 @@ exports.collegeDefaultPrompt = `
         \n8. high school name
         \n9. high school starting year
         \n10. high school graduation year
-        \n11. high school GPA
+        \n11. name of graduation diploma
         \n12. high school activities. For each activity, separately ask for
         \na. name of organization
         \nb. position in organization

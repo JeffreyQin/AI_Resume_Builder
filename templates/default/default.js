@@ -2,10 +2,10 @@ const printButton = document.getElementById('printButton');
 const resumePanel = document.getElementById('resumePanel');
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const profile = await fetch('http://localhost:3000/college/getprofile')
+    const summary = await fetch('http://localhost:3000/college/getsummary')
         .then(res => res.json());
     
-    constructResume(profile);
+    constructResume(summary.profile, summary.transcript);
 });
 
 printButton.addEventListener('click', () => {
@@ -29,7 +29,7 @@ printButton.addEventListener('click', () => {
 });
 
 
-function constructResume(profile) {
+function constructResume(profile, transcript) {
 
     const contactPanel = document.getElementById('contactPanel');
     const resumeName = document.getElementById('resumeName');
@@ -68,13 +68,27 @@ function constructResume(profile) {
     }
 
     const resumeSchool = document.getElementById('resumeSchool');
-    const resumeSchoolTime = document.getElementById('resumeSchoolTime');
-    const resumeCoursework = document.getElementById('resumeCoursework');
-    const resumeGPA = document.getElementById('resumeGPA');
     resumeSchool.innerHTML = profile['high school name'];
-    resumeSchoolTime.innerHTML = `${profile['high school starting year']} - ${profile['high school graduation year']}`;
-    resumeCoursework.innerHTML = '- <b>Coursework: </b>';
-    resumeGPA.innerHTML = `- <b>GPA: </b> ${profile['high school GPA']}`;
+    const resumeSchoolGrad = document.getElementById('resumeSchoolGrad');
+    if (profile['high school diploma'] == 'n.a.') {
+        resumeSchoolGrad.innerHTML = `${profile['high school starting year']} - ${profile['high school graduation year']}`; 
+    } else {
+        resumeSchoolGrad.innerHTML = `${profile['high school diploma']} (${profile['high school starting year']} - ${profile['high school graduation year']})`;
+    }
+    if (transcript['courses_taken'] != 0) {
+        const resumeCoursework = document.getElementById('resumeCoursework');
+        resumeCoursework.innerHTML = '<b>Coursework: </b>';
+        for (let index = 0; index < transcript['courses_taken'].length; index++) {
+            resumeCoursework.innerHTML += transcript['courses_taken'][index]
+            if (index != transcript['courses_taken'].length - 1) {
+                resumeCoursework.innerHTML += ', ';
+            }
+        }
+    }
+    if (transcript['GPA'] != 0) {
+        const resumeGPA = document.getElementById('resumeGPA');
+        resumeGPA.innerHTML = `<b>GPA: </b> ${transcript['GPA']}`;
+    }
 
     const activityPanel = document.getElementById('activityPanel');
     for (let index = 0; index < profile['high school activities'].length; index++) {
