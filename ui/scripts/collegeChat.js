@@ -74,6 +74,10 @@ readyButton.addEventListener('click', async () => {
     window.location.href = 'collegeResume.html';
 });
 
+exitButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
 function initPanelUpdate(message) {
     const botText = document.createElement('p');
     botText.innerHTML = `<b>AI: </b>${message}`;
