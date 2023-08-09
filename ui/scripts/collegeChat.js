@@ -64,6 +64,7 @@ readyButton.addEventListener('click', async () => {
     } else {
         fileUpload.setAttribute('disabled', true);
         readyButton.setAttribute('disabled', true);
+        exitButton.setAttribute('disabled', true);
         const formData = new FormData();
         formData.append('transcript', file);
         await fetch('http://localhost:3000/college/summarize', {
@@ -124,4 +125,5 @@ function readyPanelUpdate(message) {
     chatPanel.appendChild(botText);
     uploadPanel.appendChild(fileUpload);
     uploadPanel.appendChild(readyButton);
+    uploadPanel.appendChild(exitButton);
 }

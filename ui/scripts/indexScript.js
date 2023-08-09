@@ -10,10 +10,6 @@ jobButton.addEventListener('click', async () => {
     window.location.href = 'jobChat.html';
 });
 
-continueButton.addEventListener('click', async () => {
-
-});
-
 viewButton.addEventListener('click', async () => {
     window.location.href = 'collegeResume.html';
 });

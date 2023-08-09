@@ -1,4 +1,5 @@
 const printButton = document.getElementById('printButton');
+const exitButton = document.getElementById('exitButton');
 const resumePanel = document.getElementById('resumePanel');
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -7,6 +8,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     constructResume(summary.profile, summary.transcript);
 });
+
+exitButton.addEventListener('click', () => {
+    window.location.href = '../../ui/pages/collegeResume.html';
+})
 
 printButton.addEventListener('click', () => {
     var pdf = new jsPDF();

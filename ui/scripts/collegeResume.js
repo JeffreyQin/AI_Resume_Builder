@@ -1,9 +1,14 @@
 const defaultButton = document.getElementById('defaultButton');
+const exitButton = document.getElementById('exitButton');
 const editInfoButton = document.getElementById('editInfoButton');
 const infoPanel = document.getElementById('infoPanel');
 
 defaultButton.addEventListener('click', () => {
     window.location.href = '../../templates/default/default.html';
+});
+
+exitButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
 });
 
 editInfoButton.addEventListener('click', async () => {

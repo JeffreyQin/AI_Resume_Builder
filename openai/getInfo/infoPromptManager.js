@@ -59,7 +59,7 @@ exports.collegeDefaultPrompt = `
         Instruction:
         \n1. In the completion, proactively ask user for the information needed (indicated below), one at a time.
         \n2. Ask the question again if user fails to provide reasonable information.
-        \n3. When all questions are answered or skipped, say 'All information has been gathered, please upload your transcript.' word by word.
+        \n3. When all questions are answered or skipped, prompt user for their transcript. Do not mention the word "transcript" otherwise.
         \nInformation needed:
         \n1. name
         \n2. field of interest
