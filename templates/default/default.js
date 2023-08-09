@@ -35,7 +35,6 @@ printButton.addEventListener('click', () => {
 
 
 function constructResume(profile, transcript) {
-
     const contactPanel = document.getElementById('contactPanel');
     const resumeName = document.getElementById('resumeName');
     const resumeField = document.getElementById('resumeField');
@@ -98,7 +97,6 @@ function constructResume(profile, transcript) {
     const activityPanel = document.getElementById('activityPanel');
     for (let index = 0; index < profile['high school activities'].length; index++) {
         const activitySubpanel = document.createElement('div');
-        activitySubpanel.classList.add('yui-u');
         const activityContainer = document.createElement('div');
         activityContainer.classList.add('job');
         const organization = document.createElement('h2');
@@ -121,10 +119,25 @@ function constructResume(profile, transcript) {
         activityPanel.appendChild(activitySubpanel);
     }
 
+    const testPanel = document.getElementById('testPanel');
+    for (let index = 0; index < profile['test scores'].length; index++) {
+        const testSubpanel = document.createElement('div');
+        const testContainer = document.createElement('div');
+        //testContainer.classList.add('job');
+        testContainer.classList.add('score');
+        const test = document.createElement('h3');
+        const time = document.createElement('h4');
+        test.innerHTML = `${profile['test scores'][index]['test name']}: ${profile['test scores'][index]['score attained']}`
+        time.innerHTML = profile['test scores'][index]['date attained'];
+        testContainer.appendChild(test);
+        testContainer.appendChild(time);
+        testSubpanel.appendChild(testContainer);
+        testPanel.appendChild(testSubpanel);
+    }
+
     const awardPanel = document.getElementById('awardPanel');
     for (let index = 0; index < profile['high school activities'].length; index++) {
         const awardSubpanel = document.createElement('div');
-        awardSubpanel.classList.add('yui-u');
         const awardContainer = document.createElement('div');
         awardContainer.classList.add('job');
         const name = document.createElement('h2');
@@ -135,6 +148,7 @@ function constructResume(profile, transcript) {
         organization.innerHTML = profile['high school awards'][index]['organization'];
         time.innerHTML = profile['high school awards'][index]['date attained'];
         description.innerHTML = profile['high school awards'][index]['description'];
+
         awardContainer.appendChild(name);
         awardContainer.appendChild(organization);
         awardContainer.appendChild(time);
@@ -143,21 +157,6 @@ function constructResume(profile, transcript) {
         awardPanel.appendChild(awardSubpanel);
     }
 
-    const testPanel = document.getElementById('testPanel');
-    for (let index = 0; index < profile['test scores'].length; index++) {
-        const testSubpanel = document.createElement('div');
-        testSubpanel.classList.add('yui-u');
-        const testContainer = document.createElement('div');
-        testContainer.classList.add('job');
-        const test = document.createElement('h3');
-        const time = document.createElement('h4');
-        test.innerHTML = `${profile['test scores'][index]['test name']}: ${profile['test scores'][index]['score attained']}`
-        time.innerHTML = profile['test scores'][index]['date attained'];
-        testContainer.appendChild(test);
-        testContainer.appendChild(time);
-        testSubpanel.appendChild(testContainer);
-        testPanel.appendChild(testSubpanel);
-    }
 
 
 
