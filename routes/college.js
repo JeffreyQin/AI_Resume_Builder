@@ -74,5 +74,52 @@ router.get('/getsummary', (req, res) => {
     res.send({ profile: profile, transcript: transcript });
 });
 
+router.post('/editinfobasic', async (req, res) => {
+    const summaryStr = fs.readFileSync(path.join(__dirname, '../openai/summarize/summary.json'), 'utf8');
+    const summary = JSON.parse(summaryStr);
+    if (req.body.field == 'profile') {
+        if (req.body.array) {
+            summary['profile'][req.body.attribute] = JSON.parse(req.body.value);
+        } else {
+            summary['profile'][req.body.attribute] = req.body.value;
+        }
+        await modifyJsonFile(
+            path.join(__dirname, '../openai/summarize/summary.json'),
+            {
+                profile: summary['profile']
+            }
+        )
+    } else {
+        if (req.body.array) {
+            summary['transcript'][req.body.attribute] = JSON.parse(req.body.value);
+        } else {
+            summary['transcript'][req.body.attribute] = req.body.value;
+        }
+        await modifyJsonFile(
+            path.join(__dirname, '../openai/summarize/summary.json'),
+            {
+                transcript: summary['transcript']
+            }
+        )
+    }
+    res.end();
+});
+
+router.post('/editinfoadvanced', async (req, res) => {
+    const summaryStr = fs.readFileSync(path.join(__dirname, '../openai/summarize/summary.json'), 'utf8');
+    const summary = JSON.parse(summaryStr);
+    if (req.body.array) {
+        summary['profile'][req.body.attribute][req.body.index][req.body.subattribute] = JSON.parse(req.body.value);
+    } else {
+        summary['profile'][req.body.attribute][req.body.index][req.body.subattribute] = req.body.value;
+    }
+    await modifyJsonFile(
+        path.join(__dirname, '../openai/summarize/summary.json'),
+        {
+            profile: summary['profile']
+        }
+    )
+    res.end();
+});
 
 module.exports = router;

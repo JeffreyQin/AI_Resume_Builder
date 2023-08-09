@@ -57,6 +57,37 @@ function constructInfoPanel(summary) {
         infoSubpanel.appendChild(valueLabel);
         infoSubpanel.appendChild(changeButton);
         personalPanel.appendChild(infoSubpanel);
+
+        changeButton.addEventListener('click', async () => {
+            infoSubpanel.removeChild(valueLabel);
+            infoSubpanel.removeChild(changeButton);
+            const valueField = document.createElement('input');
+            valueField.value = valueLabel.innerHTML;
+            const confirmButton = document.createElement('button');
+            confirmButton.innerHTML = 'Confirm';
+            infoSubpanel.appendChild(valueField);
+            infoSubpanel.appendChild(confirmButton);
+            confirmButton.addEventListener('click', async () => {
+                const gfa = getFieldAttribute(summary, keyLabel.innerHTML);
+                await fetch('http://localhost:3000/college/editinfobasic', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+                    body: JSON.stringify({
+                        field: gfa[0],
+                        attribute: gfa[1],
+                        array: false,
+                        value: valueField.value
+                    })
+                });
+                infoSubpanel.removeChild(confirmButton);
+                infoSubpanel.removeChild(valueField);
+                valueLabel.innerHTML = valueField.value;
+                infoSubpanel.appendChild(valueLabel);
+                infoSubpanel.appendChild(changeButton);
+            });
+        });
     }
 
     for (attribute of mapping.education) {
@@ -75,67 +106,216 @@ function constructInfoPanel(summary) {
         infoSubpanel.appendChild(valueLabel);
         infoSubpanel.appendChild(changeButton);
         educationPanel.appendChild(infoSubpanel);
+
+        changeButton.addEventListener('click', async () => {
+            infoSubpanel.removeChild(valueLabel);
+            infoSubpanel.removeChild(changeButton);
+            const valueField = document.createElement('input');
+            valueField.value = valueLabel.innerHTML;
+            const confirmButton = document.createElement('button');
+            confirmButton.innerHTML = 'Confirm';
+            infoSubpanel.appendChild(valueField);
+            infoSubpanel.appendChild(confirmButton);
+            confirmButton.addEventListener('click', async () => {
+                const gfa = getFieldAttribute(summary, keyLabel.innerHTML);
+                let isArray;
+                if (gfa[1] == 'courses_taken') {
+                    isArray = true;
+                } else {
+                    isArray = false;
+                }
+                await fetch('http://localhost:3000/college/editinfobasic', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+                    body: JSON.stringify({
+                        field: gfa[0],
+                        attribute: gfa[1],
+                        array: isArray,
+                        value: valueField.value
+                    })
+                });
+                infoSubpanel.removeChild(confirmButton);
+                infoSubpanel.removeChild(valueField);
+                valueLabel.innerHTML = valueField.value;
+                infoSubpanel.appendChild(valueLabel);
+                infoSubpanel.appendChild(changeButton);
+            });
+        });
     }
 
-    for (activity of summary["profile"]["high school activities"]) {
+    const activities = summary["profile"]["high school activities"];
+    const awards = summary["profile"]["high school awards"];
+    const tests = summary["profile"]["test scores"];
+
+    for (let index = 0; index < activities.length; index++) {
         const activitySubpanel = document.createElement('div');
-        Object.keys(activity).forEach((key, index) => {
+        Object.keys(activities[index]).forEach((key, ind) => {
             const infoSubpanel = document.createElement('div');
             const keyLabel = document.createElement('label');
             const valueLabel = document.createElement('label');
             const changeButton = document.createElement('button');
             keyLabel.innerHTML = `<b>${key}: </b>`;
             if (key == 'description') {
-                valueLabel.innerHTML = JSON.stringify(activity[key]);
+                valueLabel.innerHTML = JSON.stringify(activities[index][key]);
             } else {
-                valueLabel.innerHTML = activity[key];
+                valueLabel.innerHTML = activities[index][key];
             }
             changeButton.innerHTML = "Change"
             infoSubpanel.appendChild(keyLabel);
             infoSubpanel.appendChild(valueLabel);
             infoSubpanel.appendChild(changeButton);
             activitySubpanel.appendChild(infoSubpanel);
+
+            changeButton.addEventListener('click', async () => {
+                infoSubpanel.removeChild(valueLabel);
+                infoSubpanel.removeChild(changeButton);
+                const valueField = document.createElement('input');
+                valueField.value = valueLabel.innerHTML;
+                const confirmButton = document.createElement('button');
+                confirmButton.innerHTML = 'Confirm';
+                infoSubpanel.appendChild(valueField);
+                infoSubpanel.appendChild(confirmButton);
+                confirmButton.addEventListener('click', async () => {
+                    let isArray;
+                    if (key == 'description') {
+                        isArray = true;
+                    } else {
+                        isArray = false;
+                    }
+                    await fetch('http://localhost:3000/college/editinfoadvanced', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json; charset=utf-8"
+                        },
+                        body: JSON.stringify({
+                            attribute: 'high school activities',
+                            subattribute: key,
+                            index: index,
+                            value: valueField.value,
+                            array: isArray
+                        })
+                    });
+                    infoSubpanel.removeChild(confirmButton);
+                    infoSubpanel.removeChild(valueField);
+                    valueLabel.innerHTML = valueField.value;
+                    infoSubpanel.appendChild(valueLabel);
+                    infoSubpanel.appendChild(changeButton);
+                });
+            });
         });
+        const separateLabel = document.createElement('p');
+        separateLabel.innerHTML = '---';
         activityPanel.appendChild(activitySubpanel);
+        activityPanel.appendChild(separateLabel);
     }
 
-    for (award of summary["profile"]["high school awards"]) {
+    for (let index = 0; index < awards.length; index++) {
         const awardSubpanel = document.createElement('div');
-        Object.keys(award).forEach((key, index) => {
+        Object.keys(awards[index]).forEach((key, ind) => {
             const infoSubpanel = document.createElement('div');
             const keyLabel = document.createElement('label');
             const valueLabel = document.createElement('label');
             const changeButton = document.createElement('button');
             keyLabel.innerHTML = `<b>${key}: </b>`;
-            valueLabel.innerHTML = award[key];
-            changeButton.innerHTML = "Change"
+            valueLabel.innerHTML = awards[index][key];
+            changeButton.innerHTML = "Change";
             infoSubpanel.appendChild(keyLabel);
             infoSubpanel.appendChild(valueLabel);
             infoSubpanel.appendChild(changeButton);
             awardSubpanel.appendChild(infoSubpanel);
+
+            changeButton.addEventListener('click', async () => {
+                infoSubpanel.removeChild(valueLabel);
+                infoSubpanel.removeChild(changeButton);
+                const valueField = document.createElement('input');
+                valueField.value = valueLabel.innerHTML;
+                const confirmButton = document.createElement('button');
+                confirmButton.innerHTML = 'Confirm';
+                infoSubpanel.appendChild(valueField);
+                infoSubpanel.appendChild(confirmButton);
+                confirmButton.addEventListener('click', async () => {
+                    await fetch('http://localhost:3000/college/editinfoadvanced', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json; charset=utf-8"
+                        },
+                        body: JSON.stringify({
+                            attribute: 'high school awards',
+                            subattribute: key,
+                            index: index,
+                            value: valueField.value,
+                            array: false
+                        })
+                    });
+                    infoSubpanel.removeChild(confirmButton);
+                    infoSubpanel.removeChild(valueField);
+                    valueLabel.innerHTML = valueField.value;
+                    infoSubpanel.appendChild(valueLabel);
+                    infoSubpanel.appendChild(changeButton);
+                });
+            });
         });
+        const separateLabel = document.createElement('p');
+        separateLabel.innerHTML = '---';
         awardPanel.appendChild(awardSubpanel);
+        awardPanel.appendChild(separateLabel);
     }
 
-    for (test of summary["profile"]["test scores"]) {
+    for (let index = 0; index < tests.length; index++) {
         const testSubpanel = document.createElement('div');
-        Object.keys(test).forEach((key, index) => {
+        Object.keys(tests[index]).forEach((key, ind) => {
             const infoSubpanel = document.createElement('div');
             const keyLabel = document.createElement('label');
             const valueLabel = document.createElement('label');
             const changeButton = document.createElement('button');
             keyLabel.innerHTML = `<b>${key}: </b>`;
-            valueLabel.innerHTML = test[key];
+            valueLabel.innerHTML = tests[index][key];
             changeButton.innerHTML = "Change"
             infoSubpanel.appendChild(keyLabel);
             infoSubpanel.appendChild(valueLabel);
             infoSubpanel.appendChild(changeButton);
             testSubpanel.appendChild(infoSubpanel);
+
+            changeButton.addEventListener('click', async () => {
+                infoSubpanel.removeChild(valueLabel);
+                infoSubpanel.removeChild(changeButton);
+                const valueField = document.createElement('input');
+                valueField.value = valueLabel.innerHTML;
+                const confirmButton = document.createElement('button');
+                confirmButton.innerHTML = 'Confirm';
+                infoSubpanel.appendChild(valueField);
+                infoSubpanel.appendChild(confirmButton);
+                confirmButton.addEventListener('click', async () => {
+                    await fetch('http://localhost:3000/college/editinfoadvanced', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json; charset=utf-8"
+                        },
+                        body: JSON.stringify({
+                            attribute: 'test scores',
+                            subattribute: key,
+                            index: index,
+                            value: valueField.value,
+                            array: false
+                        })
+                    });
+                    infoSubpanel.removeChild(confirmButton);
+                    infoSubpanel.removeChild(valueField);
+                    valueLabel.innerHTML = valueField.value;
+                    infoSubpanel.appendChild(valueLabel);
+                    infoSubpanel.appendChild(changeButton);
+                });
+            });
         });
+        const separateLabel = document.createElement('p');
+        separateLabel.innerHTML = '---';
         testPanel.appendChild(testSubpanel);
+        testPanel.appendChild(separateLabel);
     }
-    
-}
+    }
+
 
 const mapping = {
     personal: [
@@ -155,4 +335,13 @@ const mapping = {
         ["transcript", "courses_taken"],
         ["transcript", "GPA"]
     ]
+}
+
+function getFieldAttribute(summary, str) {
+    attribute = str.replaceAll("<b>", "").replaceAll(": </b>", "");
+    if (summary.profile.hasOwnProperty(attribute)) {
+        return ['profile', attribute];
+    } else {
+        return ['transcript', attribute];
+    }
 }

@@ -1,25 +1,23 @@
 {
     "profile": {
-        "name": "Jeff Li",
-        "field of interest": "computer science",
+        "name": "Tommy Li",
+        "field of interest": "business",
         "phone number": "n.a.",
         "personal email": "n.a.",
-        "LinkedIn account username": "n.a.",
+        "LinkedIn account username": "Tommyli12",
         "GitHub account username": "n.a.",
         "personal website": "n.a.",
         "high school name": "Tommy Secondary School",
         "high school starting year": "2021",
-        "high school graduation year": "2022",
+        "high school graduation year": "2024",
         "high school diploma": "IB diploma",
         "high school activities": [
             {
-                "organization name": "Math Club",
+                "organization name": "math club",
                 "position": "President",
                 "start date": "07/2023",
                 "end date": "08/2023",
                 "description": [
-                    "Expanded club membership by 200 people.",
-                    "Planned for successful collaboration with physics club.",
                     "Taught kids math on advanced topics like graph theory."
                 ]
             },
@@ -29,6 +27,7 @@
                 "start date": "07/2023",
                 "end date": "08/2023",
                 "description": [
+                    "Founded the foundation.",
                     "Raised charity funds of around 500 dollars.",
                     "Donated books to students of lower grades."
                 ]
@@ -46,10 +45,10 @@
         ],
         "high school awards": [
             {
-                "award name": "Math Contest Distinction",
+                "award name": "Euclid Distinction",
                 "organization": "Math Organization of America",
                 "date attained": "08/2023",
-                "description": "Placed in top 30 places out of thousands in a North American competition, achieving a perfect score."
+                "description": "Placed in top 20 places out of thousands in a North American competition, achieving a perfect score."
             },
             {
                 "award name": "Book Award",
@@ -58,12 +57,17 @@
                 "description": "Recognized for achieving the highest academic average among over 400 students."
             }
         ],
-        "test scores": "n.a."
+        "test scores": [
+            {
+                "test name": "SAT",
+                "score attained": "1500",
+                "date attained": "07/2023"
+            }
+        ]
     },
     "transcript": {
         "courses_taken": [
-            "English Ba 1",
-            "usimass Math fa 1",
+            "advanced math",
             "Camgraphy 7",
             "DaneeiPE A100",
             "Eashion Industry Am",
@@ -71,6 +75,6 @@
             "Culnary Skis BS",
             "usiness Mtge ree"
         ],
-        "GPA": "3.6"
+        "GPA": "2.0"
     }
 }
