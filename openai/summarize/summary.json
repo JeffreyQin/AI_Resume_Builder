@@ -2,11 +2,11 @@
     "profile": {
         "name": "Tommy Li",
         "field of interest": "business",
-        "phone number": "n.a.",
-        "personal email": "n.a.",
+        "phone number": "sds.",
+        "personal email": "sda.",
         "LinkedIn account username": "Tommyli12",
-        "GitHub account username": "n.a.",
-        "personal website": "n.a.",
+        "GitHub account username": "asdas.",
+        "personal website": "nsda.",
         "high school name": "Tommy Secondary School",
         "high school starting year": "2021",
         "high school graduation year": "2024",
@@ -62,6 +62,11 @@
                 "test name": "SAT",
                 "score attained": "1500",
                 "date attained": "07/2023"
+            },
+            {
+                "test name": "AP physics",
+                "score attained": "5",
+                "date attained": "06/2023"
             }
         ]
     },
