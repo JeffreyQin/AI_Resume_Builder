@@ -2,7 +2,7 @@
 
 This is an AI-powered resume building app. An AI agent will proactively guide you and ask you for personal information until it gathers the mandatory data to build the resume. You may also supplement your profile by uploading files (e.g. transcript), which will be processed using OCR (optical character recognition).
 
-- Frontend: HTML, JavaScript (Electron.js)
+- Frontend: HTML, CSS, JavaScript (Electron.js)
 - Backend: JavaScript (Node.js, Express.js, OpenAI API (GPT-4)), Python (OpenCV, Pytesseract OCR)
 
 
