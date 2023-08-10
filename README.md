@@ -11,10 +11,8 @@ This is an AI-powered resume building app. An AI agent will proactively guide yo
 1. Clone the repository
 2. Install Node.js and run "npm install", "touch .env" in the console.
 3. Type in "OPENAI_API_KEY = {{your api key}}" in .env
-4. Run "npm run start" in the console.
-
-### Prereq: 
-
+4. Install Python (if you haven't) and run "pip install numpy opencv-python pytesseract" in the console.
+5. Run "npm run start" in the console.
 
 ## Features & functionalities 
 
