@@ -13,6 +13,8 @@ This is an AI-powered resume building app. An AI agent will proactively guide yo
 3. Type in "OPENAI_API_KEY = {{your api key}}" in .env
 4. Run "npm run start" in the console.
 
+### Prereq: 
+
 
 ## Features & functionalities 
 
