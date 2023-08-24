@@ -1,13 +1,13 @@
 const collegeButton = document.getElementById('collegeButton');
-const jobButton = document.getElementById('jobButton');
+const continueButton = document.getElementById('continueButton');
 const viewButton = document.getElementById('viewButton');
 
 collegeButton.addEventListener('click', async () => {
     window.location.href = 'collegeChat.html';
 });
 
-jobButton.addEventListener('click', async () => {
-    window.location.href = 'jobChat.html';
+continueButton.addEventListener('click', async () => {
+    window.location.href = 'collegeContinue.html';
 });
 
 viewButton.addEventListener('click', async () => {

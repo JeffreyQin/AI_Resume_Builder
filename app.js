@@ -9,10 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const college = require('./routes/college');
-const job = require('./routes/job');
-
 app.use('/college', college);
-app.use('/job', job);
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}.`)
