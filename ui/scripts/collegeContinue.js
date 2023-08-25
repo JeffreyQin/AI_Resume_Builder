@@ -21,7 +21,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         .then(res => res.json())
         .then(res => res.chat);
     
-    loadProgress(result);
+     if (result[result.length - 1]['content'].toLowerCase().includes('transcript')) {
+        alert('You have finished building your last resume, start a new one?')
+        window.location.href = 'index.html';
+    } else {
+        loadProgress(result);
+    }
 });
 
 respondButton.addEventListener('click', async () => {
