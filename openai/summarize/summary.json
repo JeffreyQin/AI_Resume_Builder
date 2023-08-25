@@ -1,85 +1,71 @@
 {
     "profile": {
-        "name": "Tommy Li",
-        "field of interest": "business",
-        "phone number": "sds.",
-        "personal email": "sda.",
-        "LinkedIn account username": "Tommyli12",
-        "GitHub account username": "asdas.",
-        "personal website": "nsda.",
-        "high school name": "Tommy Secondary School",
+        "name": "Jeffrey Qin",
+        "field of interest": "Computer Science",
+        "phone number": "12381928412",
+        "personal email": "jeffrey@gmail.com",
+        "LinkedIn account username": "n.a.",
+        "GitHub account username": "randomName123",
+        "personal website": "n.a.",
+        "high school name": "Rainy High School",
         "high school starting year": "2021",
-        "high school graduation year": "2024",
-        "high school diploma": "IB diploma",
+        "high school graduation year": "2023",
+        "high school diploma": "AP Diploma",
         "high school activities": [
             {
-                "organization name": "math club",
+                "organization name": "Math Club",
                 "position": "President",
-                "start date": "07/2023",
-                "end date": "08/2023",
+                "start date": "05/2021",
+                "end date": "03/2022",
                 "description": [
-                    "Taught kids math on advanced topics like graph theory."
+                    "Taught math to over 30 people on subjects such as linear algebra and geometry.",
+                    "Made Instagram posts with over 30 viewers per post.",
+                    "Directed logistics for club activities and events."
                 ]
             },
             {
-                "organization name": "Li Foundation",
+                "organization name": "The Jeffrey Foundation",
                 "position": "Founder",
-                "start date": "07/2023",
-                "end date": "08/2023",
+                "start date": "01/2021",
+                "end date": "03/2022",
                 "description": [
-                    "Founded the foundation.",
-                    "Raised charity funds of around 500 dollars.",
-                    "Donated books to students of lower grades."
-                ]
-            },
-            {
-                "organization name": "Physics Club",
-                "position": "Participant",
-                "start date": "07/2023",
-                "end date": "08/2023",
-                "description": [
-                    "Participated in many competitions and won numerous awards.",
-                    "Conducted intricate physics experiments."
+                    "Raised over $300 in charity for individuals living in poverty.",
+                    "Donated books to local kindergartens."
                 ]
             }
         ],
         "high school awards": [
             {
-                "award name": "Euclid Distinction",
-                "organization": "Math Organization of America",
-                "date attained": "08/2023",
-                "description": "Placed in top 20 places out of thousands in a North American competition, achieving a perfect score."
-            },
-            {
-                "award name": "Book Award",
-                "organization": "Tommy High School",
-                "date attained": "08/2023",
-                "description": "Recognized for achieving the highest academic average among over 400 students."
+                "award name": "Math Contest Distinction",
+                "organization": "Mathematical Association of America",
+                "date attained": "05/2023",
+                "description": "Achieved a perfect score and placed in the top 1% among 1000 participants."
             }
         ],
         "test scores": [
             {
                 "test name": "SAT",
-                "score attained": "1500",
-                "date attained": "07/2023"
+                "score attained": "1570",
+                "date attained": "05/2022"
             },
             {
-                "test name": "AP physics",
-                "score attained": "5",
-                "date attained": "06/2023"
+                "test name": "AP Calculus BC",
+                "score attained": 4,
+                "date attained": "01/2022"
             }
         ]
     },
     "transcript": {
         "courses_taken": [
-            "advanced math",
-            "Camgraphy 7",
-            "DaneeiPE A100",
-            "Eashion Industry Am",
-            "Computer Applications 86",
-            "Culnary Skis BS",
-            "usiness Mtge ree"
+            "English Ba",
+            "usimass Math",
+            "Camgraphy",
+            "DaneeiPE",
+            "Fashion Industry",
+            "Computer Applications",
+            "usiness Mtge",
+            "French Bae"
         ],
-        "GPA": "2.0"
+        "GPA": "3.5"
     }
 }

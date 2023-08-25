@@ -9,6 +9,12 @@ exports.getPrompt = async (newPrompt) => {
     return prompt;
 }
 
+exports.getChat = async () => {
+    const chatStr = fs.readFileSync(path.join(__dirname, 'chat.json'),  'utf8');
+    const chat = JSON.parse(chatStr).prompt;
+    return chat.slice(2);
+}
+
 exports.updatePrompt = async (newPrompt, newCompletion) => {
     newPrompt.push({ "role": "assistant", "content": newCompletion })
     await modifyJsonFile(
@@ -59,7 +65,7 @@ exports.collegeDefaultPrompt = `
         Instruction:
         \n1. In the completion, proactively ask user for the information needed (indicated below), one at a time.
         \n2. Ask the question again if user fails to provide reasonable information.
-        \n3. When all questions are answered or skipped, prompt user for their transcript. Do not mention the word "transcript" otherwise.
+        \n3. When all questions are answered or skipped, prompt user for their transcript. When doing so, output "Now, may I have your transcript?" word by word
         \nInformation needed:
         \n1. name
         \n2. field of interest

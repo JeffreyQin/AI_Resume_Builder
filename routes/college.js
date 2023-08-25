@@ -31,7 +31,7 @@ router.use('/init', async (req, res) => {
 
 router.post('/getinfo/forward', async (req, res) => {
     const response = await infoGPTGenerate.generate(req.body.input);
-    if (response.toLowerCase().includes('transcript')) {
+    if (response.toLowerCase().includes('have your transcript')) {
         res.json({ status: 0, message: response });
     } else {
         res.json({ status: 1, message: response });
@@ -121,5 +121,10 @@ router.post('/editinfoadvanced', async (req, res) => {
     )
     res.end();
 });
+
+router.get('/getchat', async (req, res) => {
+    const chat = await infoPromptManager.getChat();
+    res.json({ chat: chat });
+})
 
 module.exports = router;
