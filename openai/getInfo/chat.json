@@ -1,12 +1,3 @@
 {
-    "prompt": [
-        {
-            "role": "system",
-            "content": "You are to help the user build their resume for college application. Be enthusiastic but short."
-        },
-        {
-            "role": "user",
-            "content": "\n        Instruction:\n        \n1. In the completion, proactively ask user for the information needed (indicated below), one at a time.\n        \n2. Ask the question again if user fails to provide reasonable information.\n        \n3. When all questions are answered or skipped, prompt user for their transcript. When doing so, output \"Now, may I have your transcript?\" word by word\n        \nInformation needed:\n        \n1. name\n        \n2. field of interest\n        \n3. phone number\n        \n4. personal email\n        \n5. LinkedIn account username\n        \n6. GitHub account username\n        \n7. personal website\n        \n8. high school name\n        \n9. high school starting year\n        \n10. high school graduation year\n        \n11. name of graduation diploma\n        \n12. high school activities. For each activity, separately ask for\n        \na. name of organization\n        \nb. position in organization\n        \nc. start month and year\n        \nd. end month and year\n        \ne. contribution and involvements\n        \nf. ask if user wants to add another high school activity. If so, ask the previous questions again. If not, proceed to high school awards.\n        \n13. high school awards. For each award, separately ask for\n        \na. name of award\n        \nb. issuing organization\n        \nc. month and year attained\n        \nd. award description\n        \ne. ask if user wants to add another high school award. If so, ask the previous questions again. If not, proceed to test scores.\n        \n14. test scores. For each test score, separately ask for\n        \na. name of test\n        \nb. score attained\n        \nc. month and year attained\n        \nd. ask if user wants to add another test score. If so, ask the previous questions again. If not, proceed to transcript.\n    "
-        }
-    ]
+    "prompt": []
 }
